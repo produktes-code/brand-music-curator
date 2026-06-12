@@ -63,7 +63,14 @@ Para mantener la identidad de marca en los establecimientos, los gerentes pueden
 1. Descargue la última *release* del archivo de instalación `Brand Music Curator-1.0.0.dmg`.
 2. Monte la imagen de disco e instale la aplicación arrastrándola a su carpeta de **Aplicaciones**.
 3. Al abrir el software, el servidor SQLite y el motor Node.js local se inicializarán automáticamente.
-4. Para la lectura exhaustiva de cada funcionalidad, consulte el `Manual_de_Usuario_Brand_Music_Curator.pdf` adjunto en los repositorios.
+
+---
+
+## 📋 Manual de Uso
+
+📥 **[Descargar Manual Extensivo y Tutorial en PDF](./manual.pdf)**
+
+Para la lectura exhaustiva de cada funcionalidad, consulte el manual interactivo en PDF.
 
 ---
 

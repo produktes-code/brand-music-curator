@@ -5,6 +5,7 @@ const { exec } = require('child_process');
 const mdPath = path.join(__dirname, 'Manual_de_Usuario_Brand_Music_Curator.md');
 const htmlPath = path.join(__dirname, 'Manual_de_Usuario_Brand_Music_Curator.html');
 const pdfPath = path.join(__dirname, 'Manual_de_Usuario_Brand_Music_Curator.pdf');
+const pdfPathAlt = path.join(__dirname, 'manual.pdf');
 
 if (!fs.existsSync(mdPath)) {
   console.error("Error: Markdown file not found at " + mdPath);
@@ -149,6 +150,12 @@ for (const cp of chromePaths) {
         process.exit(1);
       }
       console.log("SUCCESS: PDF compiled using Chrome.");
+      try {
+        fs.copyFileSync(pdfPath, pdfPathAlt);
+        console.log("SUCCESS: Copied manual to manual.pdf.");
+      } catch (e) {
+        console.error("Error copying manual.pdf:", e);
+      }
       try { fs.unlinkSync(htmlPath); } catch (e) {}
       process.exit(0);
     });
@@ -165,6 +172,12 @@ if (!foundChrome) {
       process.exit(1);
     }
     console.log("Fallback SUCCESS: PDF manual created via cupsfilter.");
+    try {
+      fs.copyFileSync(pdfPath, pdfPathAlt);
+      console.log("SUCCESS: Copied manual to manual.pdf.");
+    } catch (e) {
+      console.error("Error copying manual.pdf:", e);
+    }
     try { fs.unlinkSync(htmlPath); } catch (e) {}
     process.exit(0);
   });
