@@ -1,0 +1,169 @@
+SUPER PROMPT: CONFIGURACIÓN INTEGRAL DEL ECOSISTEMA ANTIGRAVITY IA
+SISTEMA OPERATIVO ANTIGRAVITY IA: Iniciando motor de síntesis técnica... El siguiente documento constituye el marco operativo y legal definitivo para la implementación de soluciones de sonorización comercial. Se integra curaduría artística de alto nivel, arquitectura IoT resiliente y un blindaje normativo avanzado para el mercado español.
+1. MARCO ESTRATÉGICO Y NEUROCIENCIA DEL RETAIL
+La misión de Antigravity es transformar el entorno acústico en un motor de rentabilidad medible. Según la neurociencia aplicada y estudios sectoriales de retail [1, 7], el diseño sonoro no es un gasto decorativo, sino un activo estratégico:
+	•	Retención de Clientes (40%): El 40% de los clientes permanece más tiempo en el establecimiento si percibe que la música está bien seleccionada, lo que se traduce directamente en un aumento de las oportunidades de venta [14].
+	•	Toma de Decisiones Impulsivas (80%): El diseño acústico profesional es un catalizador crítico, influyendo en el 80% de las decisiones de compra que se toman de forma impulsiva en el punto de venta [14].
+	•	Impacto de la Mala Selección: Una atmósfera sonora inadecuada genera un 50% de abandono inmediato del local y una tasa de no retorno del 39% [12, 14].
+	•	Incremento de Facturación (KS Depor): La implementación de sistemas de adaptación dinámica ha demostrado resultados críticos, como el caso de KS Depor, que registró un aumento del 14% en el ticket promedio [8, 17].
+2. MÓDULO A: EL "CEREBRO DJ" (LÓGICA DE CURADURÍA Y MEZCLA)
+Antigravity rechaza los algoritmos genéricos de "hilo musical" tradicional, adoptando la metodología de curaduría humana profesional liderada por Jordi Carreras (Music Curator) [3].
+	•	Diagnóstico de ADN Musical: Antes de la programación, el sistema realiza un diagnóstico psicográfico que evalúa la ubicación geográfica, la acústica física del local y el perfil del target, alineando la identidad sonora con la arquitectura del espacio [2, 5].
+	•	Estructura de Bloques y Mezcla Armónica: La música se organiza en secuencias de 60 minutos. A diferencia de las listas aleatorias, se aplica una mezcla armónica manual por especialistas para evitar silencios técnicos y saltos bruscos de volumen, emulando la fluidez de un DJ en vivo [2, 6].
+	•	Protocolo de Renovación Remota: Para evitar la fatiga auditiva de empleados y clientes, el sistema ejecuta un proceso remoto y automatizado de renovación del 100% de la biblioteca cada 30 días [2].
+	•	Lógica de Bienestar (Puertas Abiertas/Cerradas): Programación de bloques funcionales específicos para la motivación del personal en pre-apertura (puertas abiertas) y la gestión del flujo de salida en el cierre (puertas cerradas) [3, 5].
+3. MÓDULO B: SENSORES IOT E INTELIGENCIA AMBIENTAL (NODE.JS)
+El sistema utiliza lógica de integración en tiempo real para reaccionar a variables externas, optimizando la experiencia del usuario [15].
+	•	Adaptación Dinámica (Smart DJ): El motor reacciona automáticamente al clima local y al tráfico de clientes en tiempo real, ajustando el nivel de energía y el estilo musical [7, 17].
+	•	Publicidad IA Avanzada: Módulo de generación de cuñas (Text-to-Speech) en más de 30 idiomas. Como Arquitecto de Sistemas, el flujo permite configurar expresión, velocidad e intonación del locutor virtual, además de seleccionar el estilo de música de fondo para el mensaje comercial [8].
+	•	Zonificación Física: Capacidad de gestionar paisajes sonoros diferenciados (ej. música animada en zona de ventas vs. ambiente relajado en probadores o spa) de forma centralizada [15, 27].
+4. MÓDULO C: RESILIENCIA Y ARQUITECTURA OFFLINE (ELECTRON/HARDWARE)
+La arquitectura de Antigravity prioriza la continuidad del negocio frente a la inestabilidad de las redes de datos.
+	•	Sistemas de Caché Inteligente: Basado en la tecnología de Soundtrack Your Brand, el sistema almacena localmente las pistas próximas para garantizar que el establecimiento nunca quede en silencio ante caídas de internet [5, 19].
+	•	Hardware Dedicado (Freebox): Dispositivo físico ("caja naranja") del tamaño de un reproductor de DVD. Su flujo de trabajo es de "Red Cero" (Offline-first), operando con un catálogo local de 4,000 temas sin necesidad de conexión a internet para la reproducción diaria [11, 26, 32].
+Tabla Comparativa de Hardware y Soporte
+Característica
+Software Windows (Moski Pro)
+Dispositivo Propietario (Freebox)
+App Multiplataforma (Soundtrack Player)
+Soporte Físico
+PC / Portátil Windows
+Hardware dedicado ("Caja Naranja")
+iOS, Android, macOS, Windows
+Workflow de Red
+Streaming permanente
+100% Offline (Local)
+Streaming con caché offline
+Instalación
+Descarga de software
+Plug & Play (vía amplificador)
+Instalación de App
+Capacidad Catálogo
+20,000 temas (curados)
+4,000 temas (cerrado/libre)
+58 - 125 millones de temas
+5. MÓDULO D: ESCUDO LEGAL Y CATÁLOGO DUAL (ROYALTY-FREE)
+Como Consultor Legal, es imperativo clarificar que en España las plataformas B2B tienen limitaciones estrictas respecto a las licencias de uso público [13, 34].
+	•	Entidades de Gestión y "Somos Música": El cumplimiento normativo involucra a la SGAE (autores) y a "Somos Música" (entidad que aglutina la gestión conjunta de AGEDI y AIE para productores e intérpretes) [12].
+	•	El Monopolio Legal: Es un error técnico asumir que una suscripción B2B cubre todo. En España, las plataformas no están autorizadas legalmente para conceder licencias de comunicación pública; este es un monopolio de las entidades de gestión (SGAE y Somos Música) que el local debe pagar directamente [34].
+	•	Análisis de Costes Anuales (60-120m²):
+	•	SGAE: 140€ - 320€ estimativos [4].
+	•	Somos Música (AGEDI-AIE): 110€ - 250€ estimativos [4].
+	•	Certificación Royalty-Free: Para evitar el pago a SGAE, se emplean catálogos no gestionados (Freebox/ImaginaSounds). La certificación se genera desde el Área de Cliente y las obras están registradas en Safe Creative, garantizando la exención total en inspecciones [11, 12, 36].
+6. MATRIZ TÉCNICA DE PLATAFORMAS B2B
+Plataforma
+Tamaño de Catálogo
+Requisitos Internet
+Soporte Visual
+Publicidad IA
+Control Centralizado
+Soundtrack Your Brand
+125M de temas
+Streaming / Caché
+No nativo
+Mensajería corp.
+Dashboard Web Global
+Brandtrack.ai
+Listas IA
+Adaptativo
+No principal
+Generador nativo
+Dashboard Web Global
+Moski Pro
+20,000 (Curados)
+Permanente
+Vídeo / Cartelería
+Publicidad visual
+Instalación Local
+Freebox
+4,000 (Libres)
+Ninguno (Offline)
+No compatible
+No compatible
+Gestión por dispositivo
+7. PROTOCOLO DE DEFENSA ANTE INSPECCIONES
+Procedimiento operativo para el encargado del local ante la visita de delegados de gestión:
+	•	Detección de "Mystery Shoppers": Los inspectores actúan a menudo como clientes incógnitos, utilizando identificadores acústicos digitales para registrar el repertorio antes de identificarse [4].
+	•	Verificación de Documentación: Presentar el contrato del servicio B2B y, obligatoriamente, la Licencia de Comunicación Pública (si se usa música comercial).
+	•	Certificado de Exención: Si se utiliza el sistema Freebox o ImaginaSounds, mostrar el certificado de Safe Creative que acredita el uso de repertorio libre de SGAE [12, 31].
+	•	Riesgos Sancionadores: Las entidades pueden reclamar hasta 5 años de pagos retroactivos, incluyendo intereses de demora. El coste final de la sanción puede ser de 3 a 5 veces superior a la tarifa voluntaria ordinaria [4].
+8. DIRECTORIO DE FUENTES Y RECURSOS TÉCNICOS
+	•	Tringbox (Enterprise AI Music): https://www.tringbox.com/blogs/tringbox-enterprise-ai-music-2026/
+	•	Music Curator: https://musiccurator.com/
+	•	Restauración News (Entrevista Jordi Carreras): https://restauracionnews.com/2022/04/jordi-carreras-entrevista-musica-restauracion/
+	•	Apotheka (Guía SGAE): https://apotheka.com/sgae-farmacia-pagar-musica-radio
+	•	Soundtrack Your Brand (Web Oficial): https://www.soundtrack.io/
+	•	Soundtrack Your Brand (Licenciamiento España): https://www.soundtrack.io/es/licensing/spain/
+	•	Brandtrack.ai (Música para Negocios): https://www.brandtrack.ai/es
+	•	Brandtrack (Funcionalidades AI Ads): https://www.brandtrack.ai/es/como-funciona
+	•	OriginalMusic (Web Oficial): https://originalmusic.es/
+	•	Moski Pro (Streaming Legal): https://originalmusic.es/servicios/moski-pro/
+	•	Freebox (Ahorro SGAE): https://originalmusic.es/servicios/freebox/
+	•	ImaginaSounds (Alternativa SGAE): https://imaginasounds.com/
+	•	Tunio (Legal Music for Business): https://tunio.ai/en/blog/legal-music-for-business
+	•	Legis Music (Comparativa B2B): https://legismusic.com/music-streaming-services-for-business
+	•	SoundMachine (Servicios de Música): https://sound-machine.com/blog/2025/09/01/the-best-music-services-for-business/
+	•	TuneCore (Distribución Soundtrack): https://support.tunecore.com/hc/en-us/articles/360044962672-Soundtrack-Your-Brand
+	•	StatusGator (Estado de Soundtrack): https://statusgator.com/services/soundtrack-your-brand
+	•	App Store (Soundtrack for Business): https://apps.apple.com/us/app/id1114799709
+	•	Google Play (Soundtrack for Business): https://play.google.com/store/apps/details?id=com.soundtrackyourbrand.player
+	•	
+	•	
+	•	🎵 Open-Source B2B Music Branding App (Audio Digital Twin)
+	•	
+	•	[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+	•	[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+	•	
+	•	## 🚀 Visión General
+	•	Bienvenido al repositorio de la primera aplicación SaaS *hardware-agnostic* y de código abierto para la sonorización comercial profesional. Este proyecto busca revolucionar el sector del *music branding* (Retail, Hostelería, Clínicas) resolviendo las carencias críticas de las plataformas actuales: los constantes cortes de audio por mala conectividad [1, 2] y la falta de "psicología" en las listas de reproducción estáticas [3, 4]. 
+	•	
+	•	Nuestro sistema no es un simple reproductor musical; es un **Gemelo Digital de Audio** impulsado por IA Agéntica. Evalúa señales del entorno en tiempo real para modular la música, afectando directamente la psicología del consumidor para maximizar las ventas, al mismo tiempo que brinda un escudo legal absoluto frente a las entidades de gestión de derechos de autor [5-7].
+	•	
+	•	---
+	•	
+	•	## 🏗️ Arquitectura y Módulos Principales del Sistema
+	•	
+	•	El proyecto está dividido en 4 módulos independientes desarrollados bajo un ecosistema tecnológico híbrido (**Python, Node.js y Electron**):
+	•	
+	•	### 🧠 Módulo A: Cerebro DJ (Python / DSP)
+	•	Inspirado en metodologías de curaduría humana profesional [3, 8], este motor DSP rechaza el modo aleatorio (shuffle) tradicional:
+	•	* **Secuenciación en Bloques (Energy Arcs):** Programa curvas de energía estructuradas para evitar la fatiga acústica, garantizando que el paisaje sonoro actúe como un reflejo del posicionamiento de la marca [4, 9].
+	•	* **Mezcla Armónica:** Analiza los metadatos (BPM y Tonalidad) para cruzar canciones sin silencios incómodos ni saltos bruscos de volumen, emulando una sesión de DJ en vivo ininterrumpida [9].
+	•	* **Psicofisiología (Open/Close Doors):** Emite secuencias exclusivas para la motivación del equipo de trabajo interno antes de abrir y después de cerrar el local [10].
+	•	* **Procesamiento de Señal:** Implementa filtros de paso alto (*high-pass filters*) para recortar subgraves y evitar el enmascaramiento de frecuencias en grandes superficies [11].
+	•	
+	•	### 🌐 Módulo B: Sensores IoT e Inteligencia Ambiental (Node.js)
+	•	El sistema modulará el audio interactuando con variables físicas del establecimiento comercial [12]:
+	•	* **Integración de Tráfico y TPV:** Utilizando webhooks, el sistema detecta la afluencia [12]. Si hay baja ocupación, el algoritmo reduce los BPM para inducir la liberación de dopamina y aumentar la permanencia del cliente en tienda (basado en investigaciones de Milliman, 1982) [13].
+	•	* **Neuro-Optimización:** Emplea estructuras armónicas familiares para incrementar los niveles de serotonina y oxitocina del consumidor, reduciendo el estrés de decisión (basado en North & Hargreaves, 1998 y Kellaris & Kent, 1992) [13, 14].
+	•	* **Audio-Branding Publicitario:** Generador Text-to-Speech de IA para la inserción automatizada de cuñas comerciales multilingües según la demografía del momento [12].
+	•	
+	•	### 🛡️ Módulo C: Resiliencia Offline-First (Electron)
+	•	Arquitectura diseñada para erradicar los bucles de buffering al perder conexión [1, 2]:
+	•	* **Smart Pre-Caching:** Reserva y gestiona dinámicamente un mínimo de 4GB de almacenamiento local [15] para garantizar el funcionamiento ininterrumpido hasta 30 días sin red.
+	•	* **Monitor de Red y Seamless Fallback:** Un *worker* rastrea la latencia mediante *pings*. Ante la inestabilidad, realiza un *crossfade* autónomo hacia la memoria caché local, evitando el colapso del sistema [1, 2].
+	•	* **Lazy Sync:** Cuando se recupera la red, envía primero de forma silenciosa el registro auditable de reproducciones a la nube antes de restaurar el streaming [2, 16].
+	•	
+	•	### ⚖️ Módulo D: Cumplimiento Legal y Auditoría
+	•	Blindaje jurídico ante entidades de gestión colectiva (como SGAE, AGEDI, AIE en España, o ASCAP y BMI en EE. UU.) [5, 17, 18]:
+	•	* **Bloqueo Doméstico:** Impide el uso ilícito de cuentas personales de streaming (infractoras de la Ley de Propiedad Intelectual) mediante un clonador interno de metadatos [19].
+	•	* **Arquitectura de Catálogo Dual:**
+	•	  * *Modo Comercial:* Conexión a APIs B2B comerciales para éxitos de radio (advirtiendo al usuario de su obligación de pago por "comunicación pública") [5, 17].
+	•	  * *Modo Royalty-Free:* Aislamiento del catálogo comercial integrando APIs de música generada por IA (como Tunio) o de gestión independiente [20-22].
+	•	* **SGAE Shield:** Generación de Certificados de Exención en PDF interactivo en tiempo real y conservación de un *Audit Log* (las últimas 100 reproducciones inalterables) para invertir la carga de la prueba ante inspecciones legales [23-25].
+	•	
+	•	---
+	•	
+	•	## 🛠️ Instalación y Uso (Próximamente)
+	•	*(Instrucciones de clonación, dependencias de NPM, librerías Python y despliegue local de Electron)*
+	•	```bash
+	•	# Ejemplo de inicialización
+	•	git clone https://github.com/tu-usuario/b2b-music-branding-app.git
+	•	cd b2b-music-branding-app
+	•	npm install
+	•	python -m pip install -r requirements.txt
+	•	npm run start
+	•	🤝 Contribución
+	•	¡Las contribuciones de ingenieros DSP, especialistas en redes IoT, abogados de LegalTech y desarrolladores Full-Stack son bienvenidas! Por favor, lee el archivo CONTRIBUTING.md para conocer nuestras normas de código.
+	•	📄 Licencia
+

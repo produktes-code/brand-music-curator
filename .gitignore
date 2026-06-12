@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+venv/
+.venv/
+audio-engine/venv/
+
+# Production build outputs
+player/dist/
+player/dist-mac/
+
+# Databases and locks
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Local logs
+logs/
+*.log
