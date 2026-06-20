@@ -14,6 +14,8 @@
   <img src="https://img.shields.io/badge/Platform-macOS%20%7C%20Windows-green?style=for-the-badge" alt="Plataformas" />
   <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Estado" />
 </p>
+<p align="center"><b>&#127760; Soporte Multiling&#252;e: Espa&#241;ol &#127466;&#127480; | Ingl&#233;s &#127468;&#127463; | Alem&#225;n &#127465;&#127466; | Ruso &#127479;&#127482; | Japon&#233;s &#127471;&#127477; | Ucraniano &#127482;&#127462; | Chino &#127464;&#127475;</b>
+  
 
 ---
 
