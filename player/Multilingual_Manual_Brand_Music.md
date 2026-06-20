@@ -1,551 +1,277 @@
-# Multilingual User Manual / Manual de Usuario Multilingüe
-## Brand Music Curator Pro V2.5
+<p align="center">
+  <img src="build/icon.png" width="150" height="150" alt="Logo" />
+</p>
+
+# Brand Music Curator Pro V1.0.0 - Technical Manual
+**Engineered by Chus BZN / Versión Final 1.0.0**
 
 ---
 
 ## 🌐 Table of Contents / Índice de Idiomas
 
-| 🏳️ | Idioma / Language | Página |
-|-----|-------------------|--------|
-| 🇪🇸 | [Español](#-español) | 1 |
-| 🇬🇧 | [English](#-english) | 2 |
-| 🇩🇪 | [Deutsch](#-deutsch) | 3 |
-| 🇷🇺 | [Русский](#-русский) | 4 |
-| 🇯🇵 | [日本語](#-日本語) | 5 |
-| 🇺🇦 | [Українська](#-українська) | 6 |
-| 🇨🇳 | [中文](#-中文) | 7 |
-
+| 🏳️ | Idioma / Language |
+|-----|-------------------|
+| 🏳️ | [Español](#-español) |\n| 🏳️ | [English](#-english) |\n| 🏳️ | [Deutsch](#-deutsch) |\n| 🏳️ | [Русский](#-русский) |\n| 🏳️ | [日本語](#-日本語) |\n| 🏳️ | [Українська](#-українська) |\n| 🏳️ | [中文](#-中文) |\n
 ---
 
 <div style="page-break-after: always;"></div>
+\n# 🏳️ Español\n\n
+### Manual de Usuario y Guía Técnica: Brand Music Curator Pro V1.0.0
 
-# 🇪🇸 Español
+#### 1. Introducción y Neuro-Arquitectura Sensorial
+**Brand Music Curator Pro V1.0.0** es una plataforma B2B corporativa de Neuro-Arquitectura Sensorial de audio. Diseñada para locales comerciales, retail, franquicias y hostelería a gran escala, la aplicación optimiza la música ambiental mediante la modulación de energía y BPM según el clima y hora del día. Ofrece resiliencia offline extrema (Offline Cache) y cumple con las normativas legales de protección de derechos de autor.
 
-# Manual de Usuario y Tutorial Extensivo: Brand Music Curator Pro
-
-### 1. Introducción y Conceptos Básicos
-**Brand Music Curator** es una plataforma de Neuro-Arquitectura Sensorial diseñada para entornos corporativos (Retail, Hostelería, Flagships). Su propósito es automatizar el hilo musical de múltiples establecimientos físicos, garantizando reproducción sin interrupciones, cumplimiento de derechos de autor y adaptación del ritmo a la afluencia de clientes.
-
-#### 1.1 Glosario de Términos
-*   **Zona (Zone):** Un espacio físico independiente dentro de un local comercial (ej. "Probadores", "Terraza").
-*   **Mix:** Una fórmula matemática que combina dos listas de reproducción en un porcentaje exacto (ej. 70% Pop, 30% Electrónica).
-*   **Dayparting:** División del día en franjas horarias con un estilo musical específico para cada una.
-*   **Fallback / Offline Cache:** Reproducción automática desde el disco duro en caso de caída de internet.
-*   **SGAE Shield:** Protocolo de defensa legal que activa música libre de derechos en caso de inspección.
-
----
-
-### 2. Requisitos e Instalación
-*   **Requisitos del Sistema:** macOS 12 (Monterey) o superior. 8 GB RAM mínimo, 10 GB espacio libre en SSD.
+#### 2. Instalación y Requisitos del Sistema
+*   **Requisitos de Hardware:** macOS 12 (Monterey) o superior. 8 GB RAM mínimo, 10 GB de espacio libre en SSD.
 *   **Instalación:**
     1. Localice el archivo `Brand Music Curator-1.0.0.dmg`.
     2. Haga doble clic para montar la imagen de disco.
     3. Arrastre el icono de **Brand Music Curator** hacia la carpeta **Aplicaciones**.
     4. Abra la aplicación desde su Launchpad o carpeta de Aplicaciones.
 
----
+#### 3. Módulos y Características
+*   **Ad-Generator (Generador de Cuñas):** Permite inyectar anuncios auditivos promocionales en intervalos regulares de 15 a 60 minutos, con filtros para bloquear letras explícitas y bloqueo de reggaeton/géneros urbanos.
+*   **Smart IoT Auto-Modulation:** Modula de forma inteligente los BPM de la música según la hora (mañana suave, tarde activa, noche/cierre relajado) y según el clima (soleado, lluvioso, nublado).
+*   **Brand Prompt NLP Analysis:** Permite introducir la identidad del local en texto libre (ej. *"Boutique minimalista y joven"*). El motor NLP analizará el texto para calcular la proporción de mezcla óptima.
+*   **B2B Dashboard & Supervisor Lock:** Bloqueo del panel para evitar manipulación del personal. Se desbloquea con el **PIN de Supervisor: `1234`**. Soporta caché de **4 GB** para reproducción offline sin microcortes de audio ante caídas de internet.
+*   **SGAE Shield (Auditoría Legal):** Botón del pánico que purga la RAM y cambia la reproducción a música Royalty-Free libre de derechos (código de exención **`RF-101`**), registrando la fecha y hora de forma inmutable.
 
-### 3. Primeros Pasos: El Dashboard
-El Dashboard es la pantalla principal para el control de reproducción local y monitoreo del estado de salud del sistema.
-*   **Now Playing:** Muestra el progreso de la canción y los controles estándar (Play, Pause, Next, Prev).
-*   **B2B Player Lock:** Botón con candado en la cabecera derecha. Bloquea el panel para que el personal de la tienda no altere la reproducción. Se desbloquea con el **PIN de Supervisor: `1234`**.
-*   **Network Status:** Indica `ONLINE CLOUD SYNC` (verde/blanco) si hay sincronización con el servidor, o `FALLBACK: OFFLINE CACHE` (naranja) si opera sin conexión sin cortes de audio.
+#### 4. Guía de Parámetros y Valores
+*   **Blend Ratio (Deslizador):** Ajusta la mezcla porcentual entre Estilo A y Estilo B en los Mixes.
+*   **Frecuencia de Cuñas:** Intervalo de tiempo para insertar publicidad comercial (de 15m a 60m).
+*   **Offline Cache Size:** Capacidad de almacenamiento asignada al reproductor (fijado en 4 GB).
 
----
+#### 5. Flujo de Trabajo Didáctico
+1.  **Paso 1:** Abra la aplicación y configure sus Zonas y Grupos en la sección de Infraestructura.
+2.  **Paso 2:** Cree un Mix en Mixes Manager, seleccionando Estilo A, Estilo B y el ratio de mezcla.
+3.  **Paso 3:** Configure el calendario de automatización arrastrando los Mixes a las franjas horarias.
+4.  **Paso 4:** Active el IoT Auto-Modulation para vincular el reproductor a los sensores.
+5.  **Paso 5:** Guarde el proyecto con el botón **Guardar Proyecto**.
 
-### 4. Gestión de Infraestructura: Groups & Zones
-Permite organizar los reproductores instalados en las tiendas.
-*   **Añadir Grupo:** Escriba en la caja `New Group Name...` y pulse `+ Add Group`.
-*   **Zonas:** Despliega una tabla indicando el `Hardware ID` y el `Status` (indicador verde `Online` o naranja `Offline`).
+#### 6. Resolución de Problemas y Soporte
+*   **Mixes No Guardan:** Asegure que el servicio local Node.js esté corriendo en el puerto 4000.
+*   **Modo Fallback Offline Activo:** El ping supera los 250ms. Revise la conexión de red del local.
+*   **Bloqueo de Interfaz:** Si los controles están inactivos, haga clic en el candado y use el PIN `1234`.
+\n\n<div style='page-break-after: always;'></div>\n\n# 🏳️ English\n\n
+### User Manual and Technical Guide: Brand Music Curator Pro V1.0.0
 
----
+#### 1. Introduction and Sensory Neuro-Architecture
+**Brand Music Curator Pro V1.0.0** is an advanced B2B Sensory Neuro-Architecture corporate platform. It automates and optimizes background music across retail, hospitality, and flagships by modulating song energy and BPM based on foot traffic, weather, and time of day. It ensures uninterrupted offline playback (Offline Cache) and handles copyright compliance securely.
 
-### 5. Programación Musical: Mixes Manager (Smart DJ)
-Construcción de recetas musicales dinámicas.
-*   **Crear Mix:** Escriba el nombre en `Create Mix`.
-*   **Estilos Dinámicos:** Seleccione Estilo A (Base) y Estilo B (Contrapunto) entre **10 estilos**: *Indie Pop, Deep House, Chillout, Jazz, Rock, Pop Comercial, Latino/Urbano, Clásica, Blues, Soul*.
-*   **Blend Ratio (Slider):** Ajuste del porcentaje de mezcla (ej. 70% Estilo A y 30% Estilo B).
-*   **Seguridad y Energía:** Defina el nivel de energía (Low, Medium, High), frecuencia de cuñas (15m a 60m), bloqueo de letras explícitas y bloqueo de reggaeton. Guarde los cambios pulsando **`💾 Guardar Mix`**.
-
----
-
-### 6. Automatización: Visual Dayparting Schedule
-*   **Matriz Semanal:** Cuadrícula de 7 días (Lunes a Domingo) por 4 franjas horarias: *Mañana (08:00 - 12:00), Mediodía (12:00 - 16:00), Tarde (16:00 - 20:00), Noche/Cierre (20:00 - 00:00)*.
-*   **Asignación:** Seleccione el Mix en la celda del calendario. La transición entre franjas horarias utiliza un *crossfade* de 7 segundos.
-
----
-
-### 7. Configuración Avanzada del Motor (Engine Settings)
-*   **Offline Cache:** Limite de pre-caché fijado en **4 GB** (aproximadamente 400 horas de audio).
-*   **AI Engine (Neuro-IoT):** Interruptor `ACTIVE / DISABLED` para conectar con sensores y modular BPM de forma autónoma.
-*   Guarde la configuración del proyecto con el botón **`💾 Guardar Proyecto`**.
-
----
-
-### 8. Auditoría Legal: SGAE Shield
-*   **Botón del Pánico:** Al pulsar `ACTIVATE PANIC MODE`, se purga la RAM y se reproduce exclusivamente música libre de derechos (Royalty-Free).
-*   **Audit Log:** Registro inmutable con fecha, hora, ubicación y código de certificación de exención `RF-101` para demostración legal ante entidades de derechos de autor.
-
----
-
-### 9. Resolución de Problemas
-*   **No se guardan mixes:** Verifique que el servicio Node.js esté corriendo en el puerto 4000 (`node server.js`).
-*   **FALLBACK constante:** El ping con `8.8.8.8` excede 250ms; verifique el router de la tienda.
-*   **Panel no responde:** Compruebe si el panel está bloqueado. Desbloquee con el PIN `1234`.
-
-
-<div style="page-break-after: always;"></div>
-
-# 🇬🇧 English
-
-# User Manual and Extensive Tutorial: Brand Music Curator Pro
-
-### 1. Introduction and Core Concepts
-**Brand Music Curator** is a Sensory Neuro-Architecture platform designed for corporate environments (Retail, Hospitality, Flagships). Its purpose is to automate the background music of multiple physical stores, ensuring uninterrupted playback, copyright compliance, and tempo adaptation to customer traffic.
-
-#### 1.1 Glossary of Terms
-*   **Zone:** An independent physical space within a store (e.g., "Fitting Rooms", "Terrace").
-*   **Mix:** A mathematical formula combining two playlists in an exact percentage (e.g., 70% Pop, 30% Electronic).
-*   **Dayparting:** Dividing the day into time slots, each with a specific musical style.
-*   **Fallback / Offline Cache:** Automatic playback from the local SSD when network connection is lost.
-*   **SGAE Shield:** Legal defense protocol that switches the catalog to Royalty-Free music in case of an audit.
-
----
-
-### 2. Requirements and Installation
-*   **System Requirements:** Minimum 8 GB RAM, 10 GB free space on SSD. macOS 12 or higher.
+#### 2. Installation and System Requirements
+*   **Hardware Requirements:** macOS 12 (Monterey) or higher. Minimum 8 GB RAM, 10 GB free space on SSD.
 *   **Installation:**
     1. Locate the `Brand Music Curator-1.0.0.dmg` file.
     2. Double-click to mount the disk image.
     3. Drag the **Brand Music Curator** icon to the **Applications** folder.
     4. Open the application from your Launchpad or Applications folder.
 
----
+#### 3. Modules and Features
+*   **Ad-Generator (In-Store Marketing):** Enables planning and injecting audio ads into the store's background music in intervals from 15 to 60 minutes, filtering explicit lyrics and blocking unwanted genres.
+*   **Smart IoT Auto-Modulation:** Sincronizes and alters music BPM dynamically based on opening hours (morning, afternoon, closing) and local weather (sunny, rainy, cloudy).
+*   **Brand Prompt NLP Analysis:** Allows operators to describe the store's desired atmosphere in natural language. The NLP analyzer processes the text to recommend the mathematical genre-blend ratio.
+*   **Local B2B Dashboard Control:** Prevents unauthorized store staff from changing playlists. Unlock using the **Supervisor PIN: `1234`**. Supported by a **4 GB** pre-cached local storage for zero-stutter playback.
+*   **SGAE Shield (Legal Audit Safeguard):** A red panic button that instantly purges running memory and shifts all audio output to a royalty-free catalog (exemption code **`RF-101`**), outputting immutable logs.
 
-### 3. Getting Started: The Dashboard
-The Dashboard is the main control interface for local playback control and system monitoring.
-*   **Now Playing:** Displays song progress and transport controls (Play, Pause, Next, Prev).
-*   **B2B Player Lock:** Padlock button in the top-right header. Locks the panel to prevent store staff from changing playback. Unlock with the **Supervisor PIN: `1234`**.
-*   **Network Status:** Shows `ONLINE CLOUD SYNC` (green/white) when connected to the server, or `FALLBACK: OFFLINE CACHE` (orange) when operating offline with zero audio cuts.
+#### 4. Parameters and Values Guide
+*   **Blend Ratio (Slider):** Drag to adjust mixing ratio between Style A and Style B in the Mixes Manager.
+*   **Ad Frequency:** Configurable interval of ad insertion (15m to 60m).
+*   **Offline Cache Size:** Pre-caching limit allocated to the local player (set to 4 GB).
 
----
+#### 5. Step-by-Step Production Workflow
+1.  **Step 1:** Open the app and define Groups and Zones under Infrastructure Management.
+2.  **Step 2:** Formulate a Mix in Mixes Manager, selecting Style A, Style B, and the blending ratio.
+3.  **Step 3:** Assign Mixes across weekly time blocks on the calendar grid.
+4.  **Step 4:** Toggle AI Engine to activate dynamic IoT sensor BPM modulation.
+5.  **Step 5:** Save the project settings with the **Guardar Proyecto** button.
 
-### 4. Infrastructure Management: Groups & Zones
-Organizes the media players installed across your stores.
-*   **Add Group:** Enter a name in the `New Group Name...` field and click `+ Add Group`.
-*   **Zones:** Displays a table indicating the `Hardware ID` and `Status` (green `Online` or orange `Offline`).
+#### 6. Troubleshooting and Support
+*   **Mixes not saving:** Verify Node.js backend is running on port 4000.
+*   **Constant Fallback Status:** Local network latency exceeds 250ms. Check router connectivity.
+*   **Dashboard locked:** Click the lock icon and enter Supervisor PIN `1234` to enable manual edits.
+\n\n<div style='page-break-after: always;'></div>\n\n# 🏳️ Deutsch\n\n
+### Benutzerhandbuch und Technische Anleitung: Brand Music Curator Pro V1.0.0
 
----
+#### 1. Einführung und Sensorische Neuroarchitektur
+**Brand Music Curator Pro V1.0.0** ist eine B2B-Plattform für sensorische Neuroarchitektur. Sie moduliert BPM und Energie basierend auf Kundenstrom, Wetter und Tageszeit, bietet Offline-Cache und rechtliche Absicherung.
 
-### 5. Music Programming: Mixes Manager (Smart DJ)
-Build dynamic music recipes.
-*   **Create Mix:** Enter a mix name under `Create Mix`.
-*   **Dynamic Styles:** Select Style A (Base) and Style B (Contrapuntal) from **10 real genres**: *Indie Pop, Deep House, Chillout, Jazz, Rock, Pop Comercial, Latino/Urbano, Clásica, Blues, Soul*.
-*   **Blend Ratio (Slider):** Drag to adjust mixing ratio (e.g., 70% Style A and 30% Style B).
-*   **Security and Energy:** Set the energy level (Low, Medium, High), ad insertion frequency (15m to 60m), explicit lyrics filtering, and reggaeton block. Save changes by clicking **`💾 Guardar Mix`**.
-
----
-
-### 6. Automation: Visual Dayparting Schedule
-*   **Weekly Matrix:** Grid of 7 days (Monday to Sunday) across 4 slots: *Morning (08:00 - 12:00), Noon (12:00 - 16:00), Afternoon (16:00 - 20:00), Night/Close (20:00 - 00:00)*.
-*   **Assignment:** Select the Mix in the calendar cell. Transitions between slots use a smooth 7-second crossfade.
-
----
-
-### 7. Advanced Engine Settings
-*   **Offline Cache:** Pre-caching limit set to **4 GB** (approx. 400 hours of audio).
-*   **AI Engine (Neuro-IoT):** `ACTIVE / DISABLED` switch to connect local sensors and modulate BPM automatically.
-*   Save project configuration with the **`💾 Guardar Proyecto`** button.
-
----
-
-### 8. Legal Audit: SGAE Shield
-*   **Panic Button:** Clicking `ACTIVATE PANIC MODE` purges RAM and forces transition to Royalty-Free music library only.
-*   **Audit Log:** Immutable ledger showing date, time, location, and waiver certification code `RF-101` for legal proof before copyright agencies.
-
----
-
-### 9. Troubleshooting
-*   **Mixes not saving:** Verify Node.js backend is running on port 4000 (`node server.js`).
-*   **Constant FALLBACK status:** Ping to `8.8.8.8` exceeds 250ms; check store router connectivity.
-*   **Panel not responding:** Ensure panel is unlocked. Unlock using PIN `1234`.
-
-
-<div style="page-break-after: always;"></div>
-
-# 🇩🇪 Deutsch
-
-# Benutzerhandbuch und Anleitung: Brand Music Curator Pro
-
-### 1. Einführung und Kernkonzepte
-**Brand Music Curator** ist eine Plattform für sensorische Neuroarchitektur für Unternehmensumgebungen (Einzelhandel, Gastgewerbe, Flagship-Stores). Es automatisiert die Hintergrundmusik in Filialen und garantiert unterbrechungsfreie Wiedergabe, Urheberrechtskonformität und Tempoanpassung an den Kundenstrom.
-
-#### 1.1 Glossar der Begriffe
-*   **Zone:** Unabhängiger physischer Bereich in einer Filiale (z. B. "Umkleiden", "Terrasse").
-*   **Mix:** Eine Formel, die zwei Playlists in einem genauen Prozentsatz mischt (z. B. 70% Pop, 30% Elektronik).
-*   **Dayparting:** Einteilung des Tages in Zeitfenster mit jeweils einem spezifischen Musikstil.
-*   **Fallback / Offline Cache:** Automatische Wiedergabe von der lokalen SSD bei Netzwerkausfall.
-*   **SGAE-Schild:** Rechtsschutzprotokoll, das bei einer Prüfung auf lizenzfreie Musik umschaltet.
-
----
-
-### 2. Anforderungen und Installation
-*   **Systemanforderungen:** macOS 12 oder höher. Mindestens 8 GB RAM, 10 GB freier Speicherplatz auf SSD.
+#### 2. Installation und Systemanforderungen
+*   **Hardwareanforderungen:** macOS 12 (Monterey) oder höher. Mindestens 8 GB RAM, 10 GB freier Speicherplatz auf SSD.
 *   **Installation:**
     1. Suchen Sie die Datei `Brand Music Curator-1.0.0.dmg`.
     2. Doppelklicken Sie, um das Image zu aktivieren.
     3. Ziehen Sie das **Brand Music Curator**-Symbol in den Ordner **Programme**.
     4. Öffnen Sie die App über Ihr Launchpad oder den Programme-Ordner.
 
----
+#### 3. Module und Eigenschaften
+*   **Ad-Generator:** Werbeeinblendung alle 15 bis 60 Minuten mit expliziter Inhaltsfilterung (Blockade von Reggaeton/expliziten Texten).
+*   **Smart IoT Auto-Modulation:** Passt BPM an Wetter (sonnig, regnerisch) und Uhrzeit (Vormittag, Nachmittag, Abend) an.
+*   **Brand Prompt NLP:** Verarbeitet Freitext zur automatischen Berechnung der Genre-Mischung (z.B. "Minimalistische Boutique").
+*   **Dashboard & B2B Lock:** Sperrt den Player vor unbefugtem Filialpersonal (Supervisor PIN `1234`). Unterstützt einen **4 GB** Offline-Cache.
+*   **SGAE Shield (Panic Mode):** Schaltet bei Prüfungen sofort auf lizenzfreie Musik um und schreibt ein unveränderliches Audit-Protokoll mit Lizenzcode `RF-101`.
 
-### 3. Erste Schritte: Das Dashboard
-Das Dashboard ist die Hauptoberfläche zur Wiedergabesteuerung und Systemüberwachung.
-*   **Now Playing:** Zeigt den Songfortschritt und die Steuerelemente (Play, Pause, Next, Prev).
-*   **B2B-Sperre:** Vorhängeschloss-Schaltfläche oben rechts. Sperrt das Bedienfeld. Entsperren mit dem **Supervisor-PIN: `1234`**.
-*   **Netzwerkstatus:** Zeigt `ONLINE CLOUD SYNC` (grün/weiß) oder `FALLBACK: OFFLINE CACHE` (orange) bei Offline-Betrieb.
-
----
-
-### 4. Infrastrukturverwaltung: Gruppen & Zonen
-*   **Gruppe hinzufügen:** Namen in `New Group Name...` eingeben und auf `+ Add Group` klicken.
-*   **Zonen:** Tabelle mit `Hardware ID` und `Status` (grün `Online` oder orange `Offline`).
-
----
-
-### 5. Musikprogrammierung: Mixes Manager (Smart DJ)
-*   **Mix erstellen:** Mixnamen unter `Create Mix` eingeben.
-*   **Dynamische Stile:** Wählen Sie Stil A (Basis) und Stil B (Kontrapunkt) aus **10 Genres** (Indie Pop, Deep House, Chillout, Jazz usw.).
+#### 4. Parameter- und Wertanleitung
 *   **Blend Ratio (Slider):** Mischungsverhältnis einstellen (z. B. 70% Stil A und 30% Stil B).
-*   **Sicherheit:** Energieniveau (Low, Medium, High), Werbefrequenz (15m bis 60m) und Inhaltsfilter einstellen. Speichern mit **`💾 Guardar Mix`**.
+*   **Frecuencia de Cuñas:** Zeitintervall für die Werbe-Injektion (15 bis 60 Minuten).
+*   **Offline Cache Size:** Speichergröße zugeteilt für Offline-Dateien (feste 4 GB).
 
----
+#### 5. Didaktischer Arbeitsablauf
+1.  **Schritt 1:** Öffnen Sie die App und definieren Sie Gruppen und Zonen.
+2.  **Schritt 2:** Erstellen Sie ein Musikrezept (Mix) im Mixes Manager.
+3.  **Schritt 3:** Weisen Sie die Mixes im visuellen Wochenkalender den Zeitsegmenten zu.
+4.  **Schritt 4:** Aktivieren Sie die IoT-Modulation (AI Engine) im Einstellungsmenü.
+5.  **Schritt 5:** Sichern Sie das Projekt mit **Guardar Proyecto**.
 
-### 6. Automatisierung: Visual Dayparting Schedule
-*   **Wochenmatrix:** 7 Tage, 4 Zeitfenster (Vormittag, Mittag, Nachmittag, Abend).
-*   **Zuweisung:** Mix im Kalender auswählen. Der Übergang nutzt ein 7-Sekunden-Crossfade.
+#### 6. Fehlerbehebung und Support
+*   **Mixes speichern nicht:** Überprüfen Sie, ob der lokale Node.js-Dienst auf Port 4000 läuft.
+*   **Ständiger Fallback-Status:** Ping zu 8.8.8.8 überschreitet 250ms; prüfen Sie den Filial-Router.
+*   **Bedienfeld reagiert nicht:** Entsperren Sie das Panel durch Klicken auf das Vorhängeschloss und Eingabe der PIN `1234`.
+\n\n<div style='page-break-after: always;'></div>\n\n# 🏳️ Русский\n\n
+### Руководство пользователя и техническое руководство: Brand Music Curator Pro V1.0.0
 
----
+#### 1. Введение и сенсорная нейроархитектура
+**Brand Music Curator Pro V1.0.0** — это B2B-платформа сенсорной нейроархитектуры. Автоматически оптимизирует фоновую музыку, адаптируя темп (BPM) и энергию треков в зависимости от погоды, времени суток и трафика клиентов, защищая от штрафов.
 
-### 7. Erweiterte Motoreinstellungen
-*   **Offline-Cache:** Limit auf **4 GB** eingestellt (ca. 400 Stunden Musik).
-*   **AI Engine (Neuro-IoT):** `ACTIVE / DISABLED`-Schalter für Sensoren und automatische BPM-Modulation.
-*   Speichern mit **`💾 Guardar Proyecto`**.
-
----
-
-### 8. SGAE-Schild-Audits
-*   **Panic Button:** Purged den RAM und erzwingt den Übergang zur lizenzfreien Musikbibliothek.
-*   **Audit Log:** Unveränderbares Protokoll mit Datum, Uhrzeit, Ort und Freistellungscode `RF-101` als rechtlicher Nachweis.
-
----
-
-### 9. Fehlerbehebung
-*   **Mixes speichern nicht:** Überprüfen Sie, ob der Node.js-Dienst auf Port 4000 läuft.
-*   **Ständiger FALLBACK:** Ping zu `8.8.8.8` überschreitet 250ms; Router prüfen.
-*   **Bedienfeld reagiert nicht:** Entsperren mit PIN `1234`.
-
-
-<div style="page-break-after: always;"></div>
-
-# 🇷🇺 Русский
-
-# Руководство пользователя: Brand Music Curator Pro
-
-### 1. Введение и основные концепции
-**Brand Music Curator** — это платформа сенсорной нейроархитектуры для корпоративной среды (ритейл, отели, рестораны). Она автоматизирует фоновую музыку, гарантируя бесперебойное воспроизведение, соблюдение авторских прав и адаптацию темпа к потоку покупателей.
-
-#### 1.1 Глоссарий терминов
-*   **Зона (Zone):** Независимое физическое пространство в магазине (например, "Примерочные", "Терраса").
-*   **Микс (Mix):** Формула, сочетающая два плейлиста в точной пропорции (например, 70% поп-музыки, 30% электроники).
-*   **Dayparting:** Деление дня на временные интервалы со своим музыкальным стилем.
-*   **Fallback / Offline Cache:** Автоматическое воспроизведение с локального SSD при сбое сети.
-*   **SGAE Shield:** Протокол защиты, который переключает музыку на свободную от авторских прав (Royalty-Free) в случае инспекции.
-
----
-
-### 2. Требования и установка
-*   **Системные требования:** macOS 12 или выше. Минимум 8 ГБ ОЗУ, 10 ГБ свободного места на SSD.
+#### 2. Установка и системные требования
+*   **Требования к оборудованию:** macOS 12 (Monterey) или выше. Минимум 8 ГБ ОЗУ, 10 ГБ свободного места на SSD.
 *   **Установка:**
     1. Найдите файл `Brand Music Curator-1.0.0.dmg`.
-    2. Дважды щёлкните для монтирования диска.
-    3. Перетащите иконку **Brand Music Curator** в папку **Программы** (Applications).
+    2. Дважды щелкните, чтобы смонтировать образ диска.
+    3. Перетащите иконку **Brand Music Curator** в папку **Программы**.
     4. Запустите приложение из Launchpad или папки Программы.
 
----
+#### 3. Модули и возможности
+*   **Ad-Generator:** Планирование рекламы каждые 15–60 минут с фильтрацией мата и нежелательных жанров (урбан/реггетон).
+*   **Smart IoT Auto-Modulation:** Подстройка темпа под погоду (солнечно, дождь) и время открытия/закрытия магазина.
+*   **Brand Prompt NLP:** Анализ идентичности бренда по описанию на естественном языке с автоматическим расчетом смеси стилей.
+*   **Панель B2B и блокировка:** Блокирует плеер от изменения сотрудниками (PIN-код `1234`). Локальный кэш на **4 ГБ** (~400 часов музыки) для работы без сети.
+*   **SGAE Shield:** Кнопка паники переключает эфир на Royalty-Free треки и пишет лог с кодом `RF-101` для инспекторов.
 
-### 3. Начало работы: Панель управления
-Панель управления — это главный экран для управления локальным воспроизведением и мониторинга системы.
-*   **Now Playing:** Отображает прогресс песни и кнопки управления (Play, Pause, Next, Prev).
-*   **B2B Player Lock:** Кнопка с замком в правом верхнем углу. Блокирует панель во избежание несанкционированного изменения. Разблокируйте с помощью **PIN-кода супервизора: `1234`**.
-*   **Network Status:** Показывает `ONLINE CLOUD SYNC` (зеленый/белый) при подключении к серверу или `FALLBACK: OFFLINE CACHE` (оранжевый) при автономной работе.
+#### 4. Руководство по параметрам и значениям
+*   **Blend Ratio (Слайдер):** Соотношение смешивания Стиля А и Стиля B в Mixes Manager.
+*   **Frecuencia de Cuñas:** Частота вставки коммерческих куплетов (15-60 мин).
+*   **Offline Cache Size:** Размер дисковой кэш-памяти для локальной базы (4 ГБ).
 
----
+#### 5. Пошаговый рабочий процесс
+1.  **Шаг 1:** Откройте приложение, настройте Группы и Зоны.
+2.  **Шаг 2:** Создайте музыкальный рецепт (Mix) в Mixes Manager.
+3.  **Шаг 3:** Распределите Mix-рецепты по часовым интервалам на неделе.
+4.  **Шаг 4:** Включите IoT-модуляцию темпа через настройки.
+5.  **Шаг 5:** Сохраните проект кнопкой **Guardar Proyecto**.
 
-### 4. Управление инфраструктурой: Группы и Зоны
-*   **Добавить группу:** Введите имя в поле `New Group Name...` и нажмите `+ Add Group`.
-*   **Зоны:** Таблица с указанием `Hardware ID` и `Status` (зеленый `Online` или оранжевый `Offline`).
+#### 6. Устранение неполадок и поддержка
+*   **Рецепты не сохраняются:** Проверьте, запущен ли Node.js на порту 4000.
+*   **Статус Fallback:** Задержка связи выше 250 мс. Проверьте роутер.
+*   **Панель заблокирована:** Нажмите на замок и введите PIN-код супервизора `1234`.
+\n\n<div style='page-break-after: always;'></div>\n\n# 🏳️ 日本語\n\n
+### ユーザーマニュアルと技術ガイド：Brand Music Curator Pro V1.0.0
 
----
+#### 1. はじめにと感覚的ニューロアーキテクチャ
+**Brand Music Curator Pro V1.0.0** は、店舗設計のためのB2B感覚的ニューロアーキテクチャプラットフォームです。天気、時間帯、客数に合わせてテンポ（BPM）やエネルギーを最適化し、オフラインキャッシュによる完全な連続再生を担保します。
 
-### 5. Программирование музыки: Mixes Manager
-*   **Создать микс:** Введите название микса под `Create Mix`.
-*   **Динамические стили:** Выберите Стиль А (База) и Стиль B (Контрапункт) из **10 жанров** (Indie Pop, Deep House, Chillout, Jazz и др.).
-*   **Blend Ratio (Слайдер):** Отрегулируйте соотношение смешивания (например, 70% Стиля А и 30% Стиля B).
-*   **Безопасность:** Установите уровень энергии (Low, Medium, High), частоту рекламы (15м - 60м) и фильтры содержимого. Сохраните изменения кнопкой **`💾 Guardar Mix`**.
-
----
-
-### 6. Автоматизация: Расписание Dayparting
-*   **Недельная матрица:** Сетка из 7 дней (с понедельника по воскресенье) по 4 интервалам.
-*   **Назначение:** Выберите микс в ячейке календаря. Переход использует 7-секундный кроссфейд.
-
----
-
-### 7. Дополнительные настройки движка
-*   **Offline-кэш:** Лимит кэширования установлен на **4 ГБ** (~400 часов музыки).
-*   **AI Engine (Neuro-IoT):** Переключатель `ACTIVE / DISABLED` для датчиков и автоматической модуляции BPM.
-*   Сохраните проект кнопкой **`💾 Guardar Proyecto`**.
-
----
-
-### 8. Юридический аудит: SGAE Shield
-*   **Кнопка паники:** Нажатие `ACTIVATE PANIC MODE` очищает ОЗУ и принудительно переключает воспроизведение на свободную от прав библиотеку.
-*   **Журнал аудита:** Неизменяемый реестр с датой, временем, местоположением и кодом сертификации `RF-101` для предоставления инспекторам.
-
----
-
-### 9. Устранение неполадок
-*   **Миксы не сохраняются:** Проверьте, запущен ли Node.js на порту 4000 (`node server.js`).
-*   **Постоянный статус FALLBACK:** Пинг до `8.8.8.8` превышает 250 мс; проверьте роутер.
-*   **Панель не отвечает:** Убедитесь, что панель разблокирована с помощью PIN-кода `1234`.
-
-
-<div style="page-break-after: always;"></div>
-
-# 🇯🇵 日本語
-
-# ユーザーマニュアルとチュートリアル：Brand Music Curator Pro
-
-### 1. はじめにとコアコンセプト
-**Brand Music Curator** は、企業環境（店舗、ホテル、フラッグシップストア）向けに設計された感覚的ニューロアーキテクチャプラットフォームです。B2B 音楽の自動化、著作権管理の遵守、顧客のトラフィックに合わせたテンポの自動調節を実現します。
-
-#### 1.1 用語集
-*   **ゾーン (Zone):** 店舗内の独立した物理スペース（例：「試着室」、「テラス」）。
-*   **ミックス (Mix):** 2つのプレイリストを正確な比率で組み合わせる数式（例：Pop 70%、Electronic 30%）。
-*   **デイパーティング (Dayparting):** 1日を時間帯に分割し、それぞれに特定の音楽スタイルを割り当てる手法。
-*   **フォールバック / オフラインキャッシュ:** ネットワーク切断時にローカルSSDから音楽を自動再生する緊急システム。
-*   **SGAEシールド:** 立ち入り調査時に著作権フリーの音楽に自動的に移行する法的防御プロトコル。
-
----
-
-### 2. 要件とインストール
-*   **システム要件:** macOS 12 以降。最低 8 GB RAM、10 GB 以上の SSD 空き容量。
+#### 2. インストール方法とシステム要件
+*   **ハードウェア要件:** macOS 12 (Monterey) 以降。最低 8 GB RAM、10 GB 以上の SSD 空き容量。
 *   **インストール方法:**
     1. `Brand Music Curator-1.0.0.dmg` ファイルを見つけます。
     2. ダブルクリックしてディスクイメージをマウントします。
     3. **Brand Music Curator** アイコンを **アプリケーション** フォルダにドラッグします。
     4. Launchpad またはアプリケーションフォルダからアプリを開きます。
 
----
+#### 3. モジュールと機能
+*   **Ad-GeneratorCM挿入機能:** 15分〜60分間隔での店内CM挿入機能、不適切コンテンツフィルター（レゲトンの除外設定など）。
+*   **Smart IoT センサーモジュレーション:** 天候（晴れ、雨）や営業時間（朝、昼、夕方）に基づいてBPMを自動変調します。
+*   **Brand Prompt NLP:** 店舗イメージを自由な文章で記述すると、AIがジャンル配合比率を自動算出します。
+*   **管理者PINロック:** 操作ロック機能（Supervisor PIN：`1234`）。ネット切断時は自動でローカルキャッシュ（**4 GB**）再生に切り替わります。
+*   **SGAEシールド:** 緊急ボタンを押すと即座に再生をパージし、免責コード `RF-101` 付きの著作権フリー再生へ移行します。
 
-### 3. はじめに：ダッシュボード
-ダッシュボードは、ローカル再生制御およびシステム監視用のメイン画面です。
-*   **Now Playing:** 曲の進行状況とトランスポートコントロール（再生、一時停止、曲送り、曲戻し）を表示。
-*   **B2Bプレイヤーロック:** ヘッダー右上の南京錠ボタン。操作パネルをロックして店舗スタッフによる誤操作を防ぎます。**スーパーバイザーPIN：`1234`** でロック解除します。
-*   **ネットワークステータス:** 接続時は `ONLINE CLOUD SYNC` (緑/白)、オフライン時は `FALLBACK: OFFLINE CACHE` (オレンジ) と表示されます。
+#### 4. パラメータと設定値ガイド
+*   **Blend Ratio (スライダー):** スタイルAとスタイルBのミックス配合比率を調整します。
+*   **Frecuencia de Cuñas:** 広告の挿入インターバル時間（15分〜60分）。
+*   **Offline Cache Size:** オフラインファイル用に割り当てられたキャッシュサイズ（4 GB 固定）。
 
----
+#### 5. 制作ワークフロー（ステップ・バイ・ステップ）
+1.  **ステップ 1:** アプリを開き、インフラ管理メニューでグループとゾーンを設定します。
+2.  **ステップ 2:** Mixes ManagerでスタイルA、スタイルB、およびミックス比率を定義します。
+3.  **ステップ 3:** 週間の時間枠グリッドにミックスをドラッグし、スケジュールを設定します。
+4.  **ステップ 4:** 設定画面でAI Engineを有効にし、IoT天候センサー連動を開始します。
+5.  **ステップ 5:** **Guardar Proyecto** ボタンをクリックして、設定を保存します。
 
-### 4. インフラ管理：グループとゾーン
-*   **グループの追加:** `New Group Name...` に名前を入力し、`+ Add Group` をクリック。
-*   **ゾーン:** 各ゾーンの `Hardware ID` と `Status`（緑色の `Online` またはオレンジの `Offline`）を示すテーブル。
+#### 6. トラブルシューティングとサポート
+*   **ミックスが保存されない:** Node.js バックエンドサービスがポート4000で実行されているか確認してください。
+*   **フォールバック状態が続く:** 通信遅延が250msを超えています。ルーターを確認してください。
+*   **パネルが反応しない:** 南京錠アイコンをクリックし、PINコード `1234` を入力してください。
+\n\n<div style='page-break-after: always;'></div>\n\n# 🏳️ Українська\n\n
+### Посібник користувача та технічний посібник: Brand Music Curator Pro V1.0.0
 
----
+#### 1. Вступ та сенсорна нейроархітектура
+**Brand Music Curator Pro V1.0.0** — це B2B-платформа сенсорної нейроархітектури. Вона оптимізує фонову музику в залах, керуючи BPM та енергією треків відповідно до погоди, трафіку та часу, а також забезпечує захист авторських прав та офлайн-режим.
 
-### 5. 音楽プログラミング：ミックスマネージャー
-*   **ミックスの作成:** `Create Mix` の下にミックス名を入力。
-*   **アライアンススタイル:** **10種類のジャンル**（Indie Pop、Deep House、Chillout、Jazzなど）からスタイルA（ベース）とスタイルB（コントラプンタ）を選択。
-*   **ブレンド比率（スライダー）:** スライダーをドラッグして比率を調整（例：スタイルA 70%、スタイルB 30%）。
-*   **セキュリティと安全ガードレール:** エネルギー（Low, Medium, High）、広告頻度（15分〜60分）、不適切な歌詞のブロック、レゲトン/アーバンのブロックを設定。変更を **`💾 Guardar Mix`** ボタンで保存します。
-
----
-
-### 6. 自動化：デイパーティングスケジュール
-*   **週間マトリクス:** 7日（月曜〜日曜）× 4つの時間帯のグリッド。
-*   **割り当て:** セルでミックスを選択。時間帯移行時には7秒間のクロスフェードが適用されます。
-
----
-
-### 7. エンジンの詳細設定
-*   **オフラインキャッシュ:** プリキャッシュ制限を **4 GB**（約400時間の音楽）に設定。
-*   **AI Engine (Neuro-IoT):** センサーと接続して自動的にBPMをモジュレートする `ACTIVE / DISABLED` スイッチ。
-*   **`💾 Guardar Proyecto`** ボタンをクリックしてプロジェクト設定を保存します。
-
----
-
-### 8. 法的監査：SGAEシールド
-*   **パニックボタン:** `ACTIVATE PANIC MODE` をクリックすると、即座にRAMをパージし、ロイヤリティフリー（免責コード `RF-101`）のライブラリ音楽のみの再生を強制します。
-*   **監査ログ:** 日時、場所、免責証明コードを示す不変のログ。著作権団体への提出証拠として機能します。
-
----
-
-### 9. トラブルシューティング
-*   **ミックスが保存されない:** Node.js バックエンドサービスがポート4000（`node server.js`）で実行されているか確認。
-*   **常にフォールバック状態:** `8.8.8.8` への ping が 250ms を超えています。ルーターを確認してください。
-*   **パネルが反応しない:** パネルがロックされていないか確認し、PIN `1234` を入力してください。
-
-
-<div style="page-break-after: always;"></div>
-
-# 🇺🇦 Українська
-
-# Посібник користувача та навчальний посібник: Brand Music Curator Pro
-
-### 1. Вступ та основні концепції
-**Brand Music Curator** — це платформа сенсорної нейроархітектури для корпоративного середовища (рітейл, готелі, ресторани). Вона автоматизує фонову музику в філіях, гарантуючи безперебійне відтворення, дотримання авторських прав і адаптацію темпу до потоку покупців.
-
-#### 1.1 Глосарій термінів
-*   **Зона (Zone):** Незалежний фізичний простір у магазині (наприклад, "Примерочні", "Тераса").
-*   **Мікс (Mix):** Формула, що поєднує два плейлисти в точній пропорції (наприклад, 70% поп, 30% електроніки).
-*   **Dayparting:** Ділення дня на часові інтервали зі своїм музичним стилем.
-*   **Fallback / Offline Cache:** Автоматичне відтворення з локального SSD при збої мережі.
-*   **SGAE Shield:** Протокол захисту, який перемикає музику на вільну від авторських прав (Royalty-Free) у разі інспекції.
-
----
-
-### 2. Вимоги та встановлення
-*   **Системні вимоги:** macOS 12 або вище. Мінімум 8 ГБ ОЗУ, 10 ГБ вільного місця на SSD.
+#### 2. Встановлення та системні вимоги
+*   **Вимоги до заліза:** macOS 12 (Monterey) або вище. Мінімум 8 ГБ ОЗУ, 10 ГБ вільного місця на SSD.
 *   **Встановлення:**
     1. Знайдіть файл `Brand Music Curator-1.0.0.dmg`.
     2. Двічі клацніть для монтування диска.
-    3. Перетягніть іконку **Brand Music Curator** до папки **Програми** (Applications).
+    3. Перетягніть іконку **Brand Music Curator** до папки **Програми**.
     4. Запустіть програму з Launchpad або папки Програми.
 
----
+#### 3. Модулі та характеристики
+*   **Ad-Generator:** Планування реклами (кожні 15-60 хв) з фільтром нецензурної лексики та блокуванням небажаних стилів (реггетон).
+*   **Smart IoT Auto-Modulation:** Синхронізація BPM з погодою (сонячно, дощ) та часом доби (ранок, день, вечір).
+*   **Brand Prompt NLP:** Створення рецепту музичного міксу на основі текстового опису бренду в довільній формі.
+*   **Блокування PIN-кодом:** Захист плеєра від персоналу (PIN: `1234`). Об'єм кешу на **4 ГБ** для безперебійного програвання за відсутності мережі.
+*   **SGAE Shield:** Режим паніки миттєво запускає Royalty-Free плейлист і створює сертифікат `RF-101` для перевірок.
 
-### 3. Початок роботи: Панель керування
-Панель керування — це головний екран для керування локальним відтворенням і моніторингу системи.
-*   **Now Playing:** Відображає прогрес пісні та кнопки керування (Play, Pause, Next, Prev).
-*   **B2B Player Lock:** Кнопка з замком у правому верхньому кутку. Блокує панель. Розблокуйте за допомогою **PIN-коду супервізора: `1234`**.
-*   **Network Status:** Показує `ONLINE CLOUD SYNC` (зелений/білий) при підключенні до сервера або `FALLBACK: OFFLINE CACHE` (помаранчевий) при автономній роботі.
+#### 4. Гід по параметрах та значеннях
+*   **Blend Ratio (Слайдер):** Змішування стилів А і B в Mixes Manager.
+*   **Frecuencia de Cuñas:** Часовий інтервал вставки реклами (15-60 хв).
+*   **Offline Cache Size:** Ліміт дискової пам'яті для локальної копії (4 ГБ).
 
----
+#### 5. Покроковий робочий процес
+1.  **Крок 1:** Відкрийте програму, створіть Групи та Зони.
+2.  **Крок 2:** Створіть музичний мікс (Mix) у Mixes Manager.
+3.  **Крок 3:** Розподіліть мікси по часових інтервалах на тижні.
+4.  **Крок 4:** Увімкніть IoT-модуляцію темпу через налаштування.
+5.  **Крок 5:** Збережіть налаштування проекту кнопкою **Guardar Proyecto**.
 
-### 4. Керування інфраструктурою: Групи та Зони
-*   **Додати групу:** Введіть ім'я у полі `New Group Name...` і натисніть `+ Add Group`.
-*   **Зони:** Таблиця з вказівкою `Hardware ID` та `Status` (зелений `Online` або помаранчевий `Offline`).
+#### 6. Усунення несправностей та підтримка
+*   **Мікси не зберігаються:** Перевірте, чи запущений Node.js на порту 4000.
+*   **Статус Fallback:** Затримка зв'язку вище 250 мс. Перевірте роутер.
+*   **Панель заблокована:** Натисніть на замок і введіть PIN-код супервізора `1234`.
+\n\n<div style='page-break-after: always;'></div>\n\n# 🏳️ 中文\n\n
+### 用户手册与技术指南：Brand Music Curator Pro V1.0.0
 
----
+#### 1. 简介与神经感官空间设计
+**Brand Music Curator Pro V1.0.0** 是一款面向 B2B 用户的感官神经架构空间音乐管理平台。该平台通过识别客流量、营业时间段以及店内环境气候（天气）来自动调制背景音乐的能量和 BPM，保障播放连续性。
 
-### 5. Програмування музики: Mixes Manager
-*   **Створити мікс:** Введіть назву міксу під `Create Mix`.
-*   **Динамічні стилі:** Виберіть Стиль А (База) та Стиль B (Контрапункт) з **10 жанрів** (Indie Pop, Deep House, Chillout, Jazz тощо).
-*   **Blend Ratio (Слайдер):** Відрегулюйте співвідношення змішування (наприклад, 70% Стилю А і 30% Стилю B).
-*   **Безпека:** Встановіть рівень енергії (Low, Medium, High), частоту реклами (15м - 60м) та фільтри вмісту. Збережіть зміни кнопкою **`💾 Guardar Mix`**.
-
----
-
-### 6. Автоматизація: Розклад Dayparting
-*   **Тижнева матриця:** Сітка з 7 днів (з понеділка по неділю) по 4 інтервалах.
-*   **Призначення:** Виберіть мікс у комірці календаря. Перехід використовує 7-секундний кросфейд.
-
----
-
-### 7. Додаткові налаштування двигуна
-*   **Offline-кеш:** Ліміт кешування встановлено на **4 ГБ** (~400 годин музики).
-*   **AI Engine (Neuro-IoT):** Перемикач `ACTIVE / DISABLED` для датчиків та автоматичної модуляції BPM.
-*   Збережіть проект кнопкою **`💾 Guardar Proyecto`**.
-
----
-
-### 8. Юридичний аудит: SGAE Shield
-*   **Кнопка паніки:** Натискання `ACTIVATE PANIC MODE` очищає ОЗУ та примусово перемикає відтворення на вільну від прав бібліотеку.
-*   **Журнал аудиту:** Незмінний реєстр з датою, часом, місцем розташування та кодом сертифікації `RF-101` для надання інспекторам.
-
----
-
-### 9. Усунення несправностей
-*   **Мікси не зберігаються:** Перевірте, чи запущений Node.js на порту 4000 (`node server.js`).
-*   **Постійний статус FALLBACK:** Пінг до `8.8.8.8` перевищує 250 мс; перевірте роутер.
-*   **Панель не відповідає:** Переконайтеся, що панель розблокована за допомогою PIN-коду `1234`.
-
-
-<div style="page-break-after: always;"></div>
-
-# 🇨🇳 中文
-
-# 用户手册与教程：Brand Music Curator Pro
-
-### 1. 简介与核心概念
-**Brand Music Curator** 是一款专为企业环境（零售、酒店、旗舰店）设计的感官神经架构平台。其目的是实现多门店背景音乐的自动化管理，确保无间断播放、版权合规以及根据客流量自动调节音乐节奏。
-
-#### 1.1 术语表
-*   **区域 (Zone):** 门店内的独立物理空间（如“试衣间”、“露台”）。
-*   **混音 (Mix):** 将两个播放列表按精确比例结合的数学公式（如 70% 流行，30% 电子）。
-*   **日校分时 (Dayparting):** 将一天划分为不同的时间段，每个时间段分配特定的音乐风格。
-*   **备用/离线缓存 (Fallback / Offline Cache):** 网络连接中断时，系统自动从本地 SSD 缓存中无缝播放音乐。
-*   **SGAE 护盾 (SGAE Shield):** 遭遇音乐版权稽查时，立即切换为免版税（Royalty-Free）音乐的法律保护协议。
-
----
-
-### 2. 系统要求与安装
-*   **系统要求:** 最低 8 GB RAM，固态硬盘（SSD）上至少 10 GB 可用空间。macOS 12 或更高版本。
+#### 2. 安装与系统要求
+*   **硬件要求:** macOS 12 (Monterey) 或更高版本。最低 8 GB RAM，固态硬盘（SSD）上至少 10 GB 可用空间。
 *   **安装步骤:**
     1. 找到 `Brand Music Curator-1.0.0.dmg` 文件。
     2. 双击挂载磁盘映像。
     3. 将 **Brand Music Curator** 图标拖动到 **应用程序**（Applications）文件夹中。
     4. 从 Launchpad 或应用程序文件夹打开该程序。
 
----
+#### 3. 功能模块与特性
+*   **Ad-Generator (广告插播引擎):** 允许在 15 至 60 分钟的间隔内智能插播促销语音，支持过滤敏感流派及歌词屏蔽。
+*   **Smart IoT 动态调制:** 依据晴天、雨天、阴天等气象数据以及日营业时段自动调制曲库的 BPM 节奏和风格倾向。
+*   **Brand Prompt NLP 品牌解析:** 允许管理者使用自然语言描述品牌个性，NLP 自动解析并生成流派比率。
+*   **管理者 PIN 锁定与 4GB 缓存:** 锁定面板以防止店员更改音乐（密码为 **`1234`**）。离线缓存提供 4 GB 容量，断网无缝过渡。
+*   **SGAE Shield 版权审计护盾:** 一键进入恐慌模式，自动切换为免版权库（证书代码 **`RF-101`**），并记录审计日志。
 
-### 3. 入门指南：控制面板
-控制面板是用于本地播放控制和系统状态监控的主屏幕。
-*   **正在播放 (Now Playing):** 显示歌曲进度和基本控制键（播放、暂停、下一首、上一首）。
-*   **B2B 播放器锁定:** 右上角工具栏中的挂锁按钮。锁定面板以防止店内员工更改播放。使用 **主管 PIN 码: `1234`** 进行解锁。
-*   **网络状态:** 连线时显示 `ONLINE CLOUD SYNC`（绿/白），离线无缝运行时显示 `FALLBACK: OFFLINE CACHE`（橙色）。
+#### 4. 参数与值设置指南
+*   **Blend Ratio (滑动条):** 调节 Mixes Manager 中风格 A 与风格 B 的混音比率。
+*   **广告插播频率 (Frecuencia de Cuñas):** 广告插播的时间间隔（15分钟至60分钟）。
+*   **离线缓存大小 (Offline Cache Size):** 分配给离线播放器的存储空间限制（固定为 4 GB）。
 
----
+#### 5. 视频级音乐排程工作流
+1.  **第一步:** 打开应用，在基础设施页面定义 Group（分组）与 Zone（区域）。
+2.  **第二步:** 在 Mixes Manager 中创建混音（Mix）配方，设置基准流派与混合比率。
+3.  **第三步:** 在每周自动化排程表上将 Mixes 拖拽到对应的时间段中。
+4.  **第四步:** 启用 IoT 调制开关，使播放器与传感器挂钩。
+5.  **第五步:** 点击 **Guardar Proyecto** 按钮保存当前项目设置。
 
-### 4. 基础设施管理：分组与区域
-组织安装在各个门店中的播放器。
-*   **添加分组:** 在 `New Group Name...` 框中输入名称，然后点击 `+ Add Group`。
-*   **区域:** 显示一个指示 `Hardware ID` 和 `Status`（绿色表示 `Online`，橙色表示 `Offline`）的表格。
-
----
-
-### 5. 音乐编程：混音管理器 (Mixes Manager)
-构建动态音乐配方。
-*   **创建混音:** 在 `Create Mix` 下输入混音名称。
-*   **动态风格:** 从 **10种真实流派**（独立流行、深邃浩室、慢摇、爵士等）中选择风格 A（基础）和风格 B（对比）。
-*   **混音比例 (滑动条):** 拖动以调整混合比例（如风格 A 占 70%，风格 B 占 30%）。
-*   **安全性与能量控制:** 设置能量等级（Low, Medium, High）、插播广告频率（15分钟至60分钟）、过滤不雅歌词以及屏蔽雷鬼/都市音乐。点击 **`💾 Guardar Mix`** 按钮保存修改。
-
----
-
-### 6. 自动化：时间段排程矩阵
-*   **每周矩阵:** 7天（周一至周日）× 4个营业时间段的网格。
-*   **分配:** 在单元格中选择混音。时间段之间的切换使用 7 秒的淡入淡出（Crossfade）。
-
----
-
-### 7. 引擎高级设置
-*   **离线缓存:** 预缓存限制设定为 **4 GB**（约 400 小时音频）。
-*   **AI Engine (Neuro-IoT):** `ACTIVE / DISABLED` 开关，用于连接店内传感器并自动调制 BPM。
-*   点击 **`💾 Guardar Proyecto`** 按钮保存项目设置。
-
----
-
-### 8. 法律审计：SGAE 护盾
-*   **恐慌按钮:** 点击 `ACTIVATE PANIC MODE` 立即清理 RAM，强制只播放免版税（豁免代码 `RF-101`）的库音乐。
-*   **审计日志:** 不可篡改的日志，显示日期、时间、地点和豁免证书代码，供版权监管机构作为法律证明使用。
-
----
-
-### 9. 故障排除
-*   **混音无法保存:** 检查 Node.js 后端服务是否在端口 4000（`node server.js`）上运行。
-*   **持续处于 FALLBACK 状态:** 连接 `8.8.8.8` 延迟超过 250 毫秒，请检查店内的路由器。
-*   **控制面板无响应:** 检查面板是否已锁死，使用 PIN 码 `1234` 进行解锁。
-
-
-*© Brand Music Curator Pro V2.5 — Jesús Ferrer García (CHUS BZN) — All rights reserved / Todos los derechos reservados*
+#### 6. 故障排除与技术支持
+*   **混音无法保存:** 检查本地 Node.js 后端服务是否运行在端口 4000 上。
+*   **持续处于 Fallback 状态:** 延迟超过 250ms。请排查路由器和网络连接。
+*   **控制面板锁定:** 点击锁头标志并输入主管 PIN 码 `1234` 解除锁定。
+\n\n<div style='page-break-after: always;'></div>\n\n*© All rights reserved / Todos los derechos reservados — Jesús Ferrer García (CHUS BZN) — 2026*\n
