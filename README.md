@@ -35,9 +35,7 @@
 ## 📸 Capturas de Pantalla
 *(Actualizadas: Junio 2026)*
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x450/1a1a1a/c3f400?text=Dashboard+Principal+(Dayparting)" alt="Dashboard Principal" />
-</p>
+![Dashboard Principal](docs/screenshots/screenshot-Desktop.png)
 
 ---
 
