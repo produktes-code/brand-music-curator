@@ -122,7 +122,6 @@ Para acceder a la documentación técnica, manual de usuario y guía de resoluci
 
 ## ⚖️ Créditos y Licencia
 
-Este software está bajo la licencia **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. 
-Permite el uso, distribución y modificación de la herramienta para fines no comerciales. Creado y mantenido por **produktes-code**. 
+Este software es propietario y está protegido bajo derechos de autor. Reservados todos los derechos. Creado y mantenido por **produktes-code** y **Jesús Ferrer García (CHUS BZN)**. Se prohíbe cualquier copia, redistribución o modificación no autorizada de este software.
 
 *© 2026 Brand Music Curator — Todos los derechos reservados.*
