@@ -1,22 +1,49 @@
-# Dependency directories
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
 node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
 venv/
 .venv/
 audio-engine/venv/
 
-# Production build outputs
+# Build
+dist/
+build/
+*.egg-info/
 player/dist/
 player/dist-mac/
+player/dist-electron/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
 
 # Databases and locks
 *.sqlite-journal
 *.sqlite-shm
 *.sqlite-wal
 
-# Operating System files
-.DS_Store
-Thumbs.db
-
-# Local logs
-logs/
-*.log
+# Audio files (para que no se suban archivos de prueba al repo)
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.aiff

@@ -1,6 +1,7 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
+const logger = require('./logger');
 
 // Ensure database directory exists
 const dbDir = path.join(__dirname);
@@ -9,7 +10,9 @@ if (!fs.existsSync(dbDir)) {
 }
 
 // Initialize SQLite database (creates antigravity.sqlite if it doesn't exist)
-const db = new Database(path.join(dbDir, 'antigravity.sqlite'), { verbose: console.log });
+const db = new Database(path.join(dbDir, 'antigravity.sqlite'), { 
+  verbose: (msg) => logger.debug(msg) 
+});
 
 // Create Tables if they don't exist
 const initDb = () => {
@@ -66,13 +69,13 @@ const initDb = () => {
   for (const query of migrations) {
     try {
       db.exec(query);
-      console.log(`Migration applied: ${query}`);
+      logger.info(`Migration applied: ${query}`);
     } catch (e) {
       // Ignore errors from columns already existing
     }
   }
 
-  console.log("Database initialized successfully. Tables verified.");
+  logger.info("Database initialized successfully. Tables verified.");
 };
 
 // Seed default data if empty
@@ -80,7 +83,7 @@ const seedData = () => {
   const checkZones = db.prepare('SELECT COUNT(*) as count FROM zones').get();
   
   if (checkZones.count === 0) {
-    console.log("Seeding initial data...");
+    logger.info("Seeding initial data...");
     
     const insertZone = db.prepare('INSERT INTO zones (group_name, location, zone_name, hardware_id, status) VALUES (?, ?, ?, ?, ?)');
     insertZone.run('Iberian Peninsula', 'Madrid Serrano', 'Main Sales Floor', 'FBX-88A-921', 'Online');
@@ -113,9 +116,9 @@ const seedData = () => {
     insertAudit.run('FBX-88A-921', 'RF-101', 'Corporate Calm');
     insertAudit.run('FBX-BCN-114', 'RF-102', 'Retail Focus');
 
-    console.log("Database seeded successfully.");
+    logger.info("Database seeded successfully.");
   } else {
-    console.log(`Database already contains ${checkZones.count} zones. Skipping seed.`);
+    logger.info(`Database already contains ${checkZones.count} zones. Skipping seed.`);
   }
 };
 

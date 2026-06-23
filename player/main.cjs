@@ -1,8 +1,39 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const { spawn } = require('child_process');
 
 let mainWindow;
+let backendProcess = null;
+
+function startBackend() {
+    const isPackaged = app.isPackaged;
+    const backendPath = isPackaged 
+        ? path.join(process.resourcesPath, 'backend', 'server.js')
+        : path.join(__dirname, '..', 'backend', 'server.js');
+
+    console.log(`Starting backend server from path: ${backendPath}`);
+    backendProcess = spawn(process.execPath, [backendPath], {
+        cwd: path.dirname(backendPath),
+        env: { 
+            ...process.env, 
+            ELECTRON_RUN_AS_NODE: '1',
+            PORT: '4000' 
+        }
+    });
+
+    backendProcess.stdout.on('data', (data) => {
+        console.log(`[Backend stdout]: ${data}`);
+    });
+
+    backendProcess.stderr.on('data', (data) => {
+        console.error(`[Backend stderr]: ${data}`);
+    });
+
+    backendProcess.on('close', (code) => {
+        console.log(`Backend process exited with code ${code}`);
+    });
+}
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -17,7 +48,7 @@ function createWindow() {
     });
 
     // En desarrollo carga de Vite, en producción del build
-    const startUrl = process.env.VITE_DEV_SERVER_URL || `file://${path.join(__dirname, 'dist', 'index.html')}`;
+    const startUrl = process.env.DEV_SERVER_URL || `file://${path.join(__dirname, 'dist', 'index.html')}`;
     mainWindow.loadURL(startUrl);
 
     mainWindow.on('closed', () => {
@@ -25,7 +56,17 @@ function createWindow() {
     });
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+    startBackend();
+    createWindow();
+});
+
+app.on('will-quit', () => {
+    if (backendProcess) {
+        console.log('Terminating backend process...');
+        backendProcess.kill();
+    }
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {

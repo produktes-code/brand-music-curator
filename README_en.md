@@ -1,8 +1,10 @@
+> **Nota:** Esta es la documentación oficial en English.
+
 <p align="center">
   <img src="build/icon.png" width="128" height="128" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" alt="Brand Music Curator Logo" />
 </p>
 
-<h1 align="center">Brand Music Curator V1.0.0</h1>
+<h1 align="center">Brand Music Curator V1.0.0 (English)</h1>
 
 <p align="center">
   <b>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</b><br/>

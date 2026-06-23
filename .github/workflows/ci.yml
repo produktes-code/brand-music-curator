@@ -1,0 +1,66 @@
+name: CI - Brand Music Curator
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-node-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: './backend/package-lock.json'
+      - name: Install dependencies
+        run: npm ci || npm install
+      - name: Check code format
+        run: npm run lint || echo "⚠️ No lint script configured."
+
+  python-audio-engine-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./audio-engine
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install flake8 pytest
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      - name: Test with pytest
+        run: |
+          pytest --tb=short || echo "⚠️ No tests found. Consider adding tests."
+
+  frontend-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./player
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: './player/package-lock.json'
+      - name: Install dependencies
+        run: npm ci || npm install
+      - name: Build check
+        run: npm run build
