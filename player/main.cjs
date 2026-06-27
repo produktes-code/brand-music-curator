@@ -12,12 +12,17 @@ function startBackend() {
         ? path.join(process.resourcesPath, 'backend', 'server.js')
         : path.join(__dirname, '..', 'backend', 'server.js');
 
+    const asarNodeModules = isPackaged 
+        ? path.join(process.resourcesPath, 'app.asar', 'node_modules')
+        : '';
+
     console.log(`Starting backend server from path: ${backendPath}`);
     backendProcess = spawn(process.execPath, [backendPath], {
         cwd: path.dirname(backendPath),
         env: { 
             ...process.env, 
             ELECTRON_RUN_AS_NODE: '1',
+            NODE_PATH: asarNodeModules,
             PORT: '4000' 
         }
     });
