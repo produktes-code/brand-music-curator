@@ -9,8 +9,8 @@ const logger = require('./logger');
 const db = require('./db');
 
 const pythonBin = process.platform === 'win32'
-  ? path.resolve(__dirname, '..', 'audio-engine', 'venv', 'Scripts', 'python.exe')
-  : path.resolve(__dirname, '..', 'audio-engine', 'venv', 'bin', 'python');
+  ? path.resolve(__dirname, '..', 'audio-engine', 'standalone-python-windows', 'python.exe')
+  : path.resolve(__dirname, '..', 'audio-engine', 'standalone-python', 'bin', 'python3');
 
 
 // Auto-generate .env with a secure random key if it doesn't exist

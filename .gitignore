@@ -47,3 +47,7 @@ docker-compose.override.yml
 *.flac
 *.ogg
 *.aiff
+
+# Standalone runtimes and binary distributions
+audio-engine/standalone-python/
+audio-engine/standalone-python-windows/
