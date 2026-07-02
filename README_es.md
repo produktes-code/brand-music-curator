@@ -60,8 +60,11 @@ En el despliegue Retail y Enterprise, una caída de sistema no es un bug, es pé
 
 El proceso de despliegue de esta herramienta responde a un imperativo de la industria: en un entorno de estudio o producción, el tiempo invertido en configurar dependencias es tiempo perdido. Hemos empaquetado una arquitectura 'Zero-Friction' compilando bibliotecas DSP, los binarios de Python y los renders directamente en el núcleo de la aplicación.
 
-• **Sistemas macOS (Arquitectura unificada)**: El binario `.dmg` garantiza portabilidad absoluta. Atención: Al no contar con un certificado de desarrollador de pago para el Notarization Service de Apple, macOS Gatekeeper marcará el binario con cuarentena. Como ingenieros, sabemos que el método legítimo de bypass local es el 'Clic derecho -> Abrir'. No es un fallo, es el flujo estándar de software open-source de alto rendimiento.
-• **Sistemas Windows**: El payload instalador auto-configura el entorno PATH de Windows de manera silenciosa, evitando conflictos con instalaciones de Python preexistentes en tu máquina.
+### 🍎 Usuarios de macOS (Gatekeeper)
+Al no contar con un certificado de desarrollador de pago de Apple, Gatekeeper marcará el binario. El método legítimo de bypass local es hacer **Clic derecho sobre la app -> Abrir** (no hagas doble clic). No es un fallo, es el flujo estándar de software open-source de alto rendimiento.
+
+### 🪟 Usuarios de Windows (SmartScreen)
+Windows Defender puede mostrar un aviso azul de 'PC protegido' al ejecutar el instalador `.exe` por ser una app sin firma corporativa. Haz clic en **'Más información'** y luego en **'Ejecutar de todas formas'**.
 
 ---
 
@@ -81,5 +84,3 @@ Este software es el resultado manifiesto de la profunda ingeniería concebida y 
 Nos negamos a ofrecer cajas negras simplificadas. Entregamos consolas paramétricas absolutas. Licenciado bajo restricciones de propiedad intelectual y los más estrictos márgenes open source (CC BY-NC-SA 4.0). ESTÁNDAR CORPORATIVO - RETAIL READY. GRADO INGENIERÍA CERTIFICADO.
 
 
-
-⚠️ Aviso para usuarios de macOS: Al abrir la aplicación por primera vez, macOS puede mostrar un aviso de seguridad. Solución: haz clic derecho sobre la aplicación y selecciona "Abrir", luego haz clic en "Abrir" en el diálogo. Si ya fue bloqueada, ve a Preferencias del Sistema > Privacidad y Seguridad y haz clic en "Abrir de todos modos".

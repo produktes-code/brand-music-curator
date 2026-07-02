@@ -58,10 +58,13 @@ In Retail and Enterprise deployment, a system crash is not a bug; it is capital 
 
 ## 🚀 Technical Deployment (Installation)
 
-The deployment process of this tool responds to an industry imperative: in a studio or production environment, time spent configuring dependencies is time wasted. We packaged a 'Zero-Friction' architecture compiling DSP libraries, Python binaries, and renderers directly into the application's core.
+The deployment process responds to an industry imperative: in production, time spent configuring dependencies is time wasted. We packaged a 'Zero-Friction' architecture compiling DSP libraries, Python binaries, and renderers directly into the application's core.
 
-• **macOS Systems**: The `.dmg` binary guarantees absolute portability. Note: Because it lacks a paid developer certificate for Apple's Notarization Service, macOS Gatekeeper will quarantine the binary. As engineers, we know the legitimate local bypass method is 'Right-click -> Open'. It is not a flaw; it is the standard flow of high-performance open-source software.
-• **Windows Systems**: The installer payload silently auto-configures the Windows PATH environment, evading conflicts with pre-existing Python installations.
+### 🍎 macOS Users (Gatekeeper)
+Lacking a paid Apple developer certificate, Gatekeeper will quarantine the binary. As engineers, the legitimate local bypass is to **Right-click the app -> Open** (do not double-click). It is the standard flow of high-performance open-source software.
+
+### 🪟 Windows Users (SmartScreen)
+Windows Defender may show a blue 'Windows protected your PC' warning when running the `.exe` installer. Click **'More info'** and then **'Run anyway'**.
 
 ---
 
@@ -81,5 +84,3 @@ Software conceived and articulated from the produktes-code labs in inseparable u
 Licensed under proprietary restrictions and strictest open source margins (CC BY-NC-SA 4.0). CORPORATE STANDARD - RETAIL READY.
 
 
-
-⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".

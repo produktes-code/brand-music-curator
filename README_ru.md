@@ -58,10 +58,13 @@
 
 ## 🚀 Техническое развертывание
 
-Архитектура 'Zero-Friction':
+Архитектура 'Zero-Friction' интегрирует DSP и Python непосредственно в приложение.
 
-• macOS: Gatekeeper заблокирует файл. Решение: 'Правый клик -> Открыть'.
-• Windows: Автоматическая конфигурация PATH.
+### 🍎 Пользователи macOS (Gatekeeper)
+Gatekeeper заблокирует файл из-за отсутствия платного сертификата. Решение: **Правый клик -> Открыть**.
+
+### 🪟 Пользователи Windows (SmartScreen)
+Windows Defender может показать синее предупреждение. Нажмите **'Подробнее'**, а затем **'Выполнить в любом случае'**.
 
 ---
 
@@ -79,5 +82,3 @@
 Разработано produktes-code и Jesus Ferrer (CHUS BZN). CC BY-NC-SA 4.0. CORPORATE STANDARD.
 
 
-
-⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".

@@ -58,10 +58,13 @@ Brand Music Curator 的诞生源于零售业的深深挫败感：背景音乐往
 
 ## 🚀 技术部署 (安装)
 
-零摩擦架构：
+零摩擦架构将 DSP 和 Python 直接编译到应用程序核心。
 
-• macOS：Gatekeeper 将隔离二进制文件。工程师解决方案：“右键单击 -> 打开”。
-• Windows：自动 PATH 配置。
+### 🍎 macOS 用户 (Gatekeeper)
+由于缺乏付费证书，Gatekeeper 将隔离文件。合法的本地绕过方法是：**右键单击应用 -> 打开**。
+
+### 🪟 Windows 用户 (SmartScreen)
+运行 `.exe` 时，Windows Defender 可能会显示蓝色警告。点击 **'更多信息'**，然后点击 **'仍要运行'**。
 
 ---
 
@@ -79,5 +82,3 @@ Brand Music Curator 的诞生源于零售业的深深挫败感：背景音乐往
 由 produktes-code 和 Jesus Ferrer (CHUS BZN) 开发。CC BY-NC-SA 4.0。企业标准。
 
 
-
-⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".

@@ -58,10 +58,13 @@ Systemabstürze sind Kapitalverlust. Shielding:
 
 ## 🚀 Technische Bereitstellung
 
-Zeit für Abhängigkeiten ist in der Produktion verschwendet. 'Zero-Friction'-Architektur:
+Zeit für Abhängigkeiten ist in der Produktion verschwendet. 'Zero-Friction'-Architektur kompilliert DSP und Python direkt.
 
-• macOS: Gatekeeper wird die Binärdatei unter Quarantäne stellen (fehlendes Bezahlzertifikat). Ingenieurslösung: 'Rechtsklick -> Öffnen'. Standard bei Open Source.
-• Windows: Automatische PATH-Konfiguration.
+### 🍎 macOS-Benutzer (Gatekeeper)
+Gatekeeper wird die Binärdatei unter Quarantäne stellen (fehlendes Bezahlzertifikat). Ingenieurslösung: **Rechtsklick -> Öffnen** (nicht doppelklicken).
+
+### 🪟 Windows-Benutzer (SmartScreen)
+Windows Defender zeigt möglicherweise einen blauen Warnbildschirm beim `.exe` an. Klicken Sie auf **'Weitere Informationen'** und dann auf **'Trotzdem ausführen'**.
 
 ---
 
@@ -79,5 +82,3 @@ Laden Sie unser offizielles Handbuch herunter:
 Entwickelt von produktes-code und Jesus Ferrer (CHUS BZN). CC BY-NC-SA 4.0. CORPORATE STANDARD.
 
 
-
-⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".
