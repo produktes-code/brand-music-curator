@@ -1,134 +1,85 @@
-> **Nota:** Esta es la documentación oficial en Español.
-
 <p align="center">
   <img src="build/icon.png" width="128" height="128" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" alt="Brand Music Curator Logo" />
 </p>
 
-<h1 align="center">Brand Music Curator V1.0.0 (Español)</h1>
+<h1 align="center">Brand Music Curator V1.0.0</h1>
 
 <p align="center">
-  <b>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</b><br/>
-  <i>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</i>
+  <b>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</b><br/>
+  <i>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</i>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" alt="Build" />
-  <img src="https://img.shields.io/badge/Version-v1.0.0-blue?style=for-the-badge" alt="Versión 1.0.0" />
-  <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Estado" />
-  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="Licencia" />
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build" />
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="License" />
 </p>
 
-<p align="center">
-  <b>🌐 Multilingual & Multimodal Support / Soporte Multiidioma:</b><br/>
-  🇪🇸 Spanish | 🇬🇧 English | 🇩🇪 German | 🇷🇺 Russian | 🇯🇵 Japanese | 🇺🇦 Ukrainian | 🇨🇳 Chinese
-</p>
+🌐 **Leer en:** [🇬🇧 English](README.md) | **🇪🇸 Español** | [🇩🇪 Deutsch](README_de.md) | [🇷🇺 Русский](README_ru.md) | [🇯🇵 日本語](README_ja.md) | [🇺🇦 Українська](README_uk.md) | [🇨🇳 中文](README_zh.md)
 
 ---
 
-## 🎯 Overview / Descripción del Proyecto
+## 🎯 La Visión (Introducción)
 
-**Brand Music Curator** es un Gemelo Digital de Audio corporativo diseñado específicamente para el sector *Retail*, franquicias y hostelería a gran escala. Actúa como el cerebro curatorial de tus establecimientos, ofreciendo música ininterrumpida y modulada mediante IA, protegiendo al negocio frente a inspecciones legales y asegurando una experiencia de cliente (CX) perfecta.
+La génesis de Brand Music Curator surge de una frustración profunda en la industria del Retail: la música ambiental en espacios comerciales siempre ha sido una idea de último momento, a menudo relegada a listas de reproducción genéricas que acaban por fatigar tanto a clientes como a empleados. Como ingenieros y diseñadores de experiencia, comprendimos que el audio no es un adorno, es un ancla psicológica. Brand Music Curator fue diseñado para ser el Gemelo Digital de Audio definitivo para grandes superficies. No es un reproductor; es un cerebro curatorial que comprende la energía del local, modula el flujo de clientes (CX) y, críticamente, blinda al negocio frente a las draconianas inspecciones de derechos de autor. Hemos creado esta herramienta para devolverle el control a las marcas sobre su identidad sonora.
 
 > [!NOTE]
-> Desarrollado por **produktes-code** y **Antigravity IA** para establecer estándares profesionales en la ingeniería de audio comercial.
+> Desarrollado por **produktes-code** y **Jesús Ferrer (CHUS BZN)** para establecer estándares profesionales en la ingeniería comercial.
 
 ---
 
-## 📸 Capturas de Pantalla
-*(Actualizadas: Junio 2026)*
+## 📸 Interface / Ergonomics
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x450/1a1a1a/c3f400?text=Dashboard+Principal+(Dayparting)" alt="Dashboard Principal" />
-</p>
-
----
-
-## ⚙️ Características Principales
-
-1. 🎼 **Análisis de BPM y Key**: Algoritmos avanzados para la detección de energía, tempo y armónicos de los archivos de audio.
-2. 🧠 **Curación IA y NLP**: Generación de *Mixes* matemáticos perfectos usando prompts en lenguaje natural.
-3. 🎧 **Integración de Fuentes (Local y Spotify)**: Capacidad para procesar bibliotecas FLAC locales o realizar integraciones con Spotify API (como fallback).
-4. 🌍 **Soporte Multilingüe (7 idiomas)**: Interfaz de usuario mutante al 100% en Español, Inglés, Alemán, Ruso, Japonés, Ucraniano y Chino.
-5. 🛡️ **Blindaje de Seguridad (SGAE Shield)**: Auditoría blockchain inmutable y botón del pánico para conmutar inmediatamente a un catálogo libre de derechos (*Royalty-Free*).
-
----
-
-## 🏗️ Stack Tecnológico
-
-*   **Frontend Interface:** React 19 + Tailwind CSS + Vite (Empaquetado en Electron para escritorio).
-*   **Backend Server:** Node.js (Express) con Rate Limiting y CORS restrictivo.
-*   **Database Storage:** Better-SQLite3 con cifrado nativo.
-*   **Audio DSP:** Python 3 + `librosa` / `scipy` para análisis de ondas.
-
-### 📁 Estructura de Carpetas
-
-```text
-brand-music-curator/
-├── audio-engine/       # Analizador Python (BPM, Key) y DSP
-├── backend/            # API Express Node.js, Base de datos y Auth
-├── docs/               # Manuales PDF multilingües compilados
-└── player/             # Frontend React/Vite y empaquetador Electron
-```
+![Desktop Interface](docs/screenshots/screenshot-Desktop.png)
 
 
 ---
 
-## 🚀 Instalación y Configuración Rápida
+## ⚙️ Masterclass de Parámetros (Funcionalidades)
 
-### Vía Docker (Recomendado para servidores)
-```bash
-docker build -t brand-music-curator .
-docker run -d -p 4000:4000 -p 5173:5173 --env-file .env brand-music-curator
-```
-
-### Vía Manual (Desarrollo local)
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/produktes-code/brand-music-curator.git
-cd brand-music-curator
-
-# 2. Iniciar el Backend
-cd backend && npm ci && npm start
-
-# 3. Iniciar el Frontend (En otra terminal)
-cd player && npm ci && npm run dev
-```
+- **Motor DSP Analítico (librosa)**: ¿Por qué necesitamos análisis matemático en tiempo real? Porque fiarse de los metadatos ID3 de un mp3 es un error de novato. Hemos integrado el motor 'librosa' para que la aplicación lea los bytes del audio, extrayendo la energía RMS (impacto real en el altavoz), el Tempo (BPM) y la Clave Armónica. Esto permite que el sistema ensamble listas que no tienen saltos de energía destructivos.
+- **Matriz de 45 Estilos Musicales**: No creemos en las listas de reproducción estáticas. El usuario dispone de 45 géneros (desde Deep House a Acoustic Folk) y un sistema de 'Recetas' (Mixes) donde se cruzan porcentajes. Seleccionar 70% Indie Pop y 30% Lo-Fi Hip Hop crea una textura específica diseñada para relajar al cliente sin perder ritmo. Esto empodera al music curador para pintar con sonido.
+- **Topología de Zonas Independientes**: Un hotel no suena igual en el lobby que en el restaurante. Hemos estructurado el software para enrutar el audio algorítmicamente por zonas de hardware. De este modo, desde una única máquina centralizada, el ingeniero de sonido de la instalación puede gobernar múltiples atmósferas sin cruces de fase ni de concepto.
+- **SGAE Shield (Blindaje de Derechos)**: El dolor de cabeza más grande en retail son las multas por derechos de propiedad intelectual. El 'SGAE Shield' es nuestra respuesta de ingeniería legal. Un simple botón corta inmediatamente cualquier streaming no autorizado y fuerza al reproductor a alimentarse estrictamente de catálogos Royalty-Free preaprobados, actuando como un cortafuegos salvavidas ante una inspección sorpresa.
+- **Fallback Absoluto (Spotify API)**: El silencio es inaceptable en un espacio comercial. Hemos programado un watchdog asíncrono que monitorea el buffer local. Si por cualquier fallo del disco duro la música se detiene, el sistema inyecta transparentemente el audio a través de la API de Spotify, garantizando una latencia cero en la percepción del usuario.
 
 ---
 
-## 📖 Guía de Uso Rápido
+## 🛡️ Arquitectura de Blindaje (Seguridad)
 
-1. **Inicia el servidor** y accede a `http://localhost:5173`.
-2. **Desbloquea el panel** utilizando el PIN de Supervisor (`1234`).
-3. Ve a la pestaña **Mixes** y crea una receta musical (ej. 70% Deep House, 30% Jazz).
-4. Arrastra la música en la pestaña **Dashboard** (Archivos hasta 2 GB con validación de archivos mediante Magic Bytes).
-5. Asigna tus mezclas a las franjas horarias en el **Planificador**.
-6. Haz clic en **Guardar Proyecto**. El hilo musical comenzará a sonar en la tienda conectada.
+En el despliegue Retail y Enterprise, una caída de sistema no es un bug, es pérdida de capital. Hemos diseñado una coraza defensiva (Shielding) que emula las mejores prácticas de DevSecOps:
 
----
-
-## 💻 Instaladores Nativos
-
-El proyecto se compila y empaqueta en binarios ejecutables para las distintas plataformas:
-*   **macOS**: Instalador nativo disponible como archivo `.dmg`.
-*   **Windows**: Instalador disponible como archivo `.exe`.
+• **Ingeniería Anti-Flood (Rate limiting)**: Los algoritmos asíncronos estrangulan cualquier pico anómalo de peticiones mediante middlewares de limitación, evadiendo colapsos de Thread Pool.
+• **Cristalografía Binaria (Magic Bytes)**: Validar un '.mp3' en el nombre es trivial para inyectar un payload malicioso. El sistema abre el encabezado del archivo y verifica la secuencia hexadecimal nativa para certificar la integridad del contenedor.
+• **Sanidad de RAM (Limitador 2 GB)**: Los ataques OOM (Out Of Memory) destruyen servidores. Rechazamos implacablemente en el umbral de subida cualquier peso atípico.
 
 ---
 
-## 📚 Documentación Completa
+## 🚀 Despliegue Técnico (Instalación)
 
-Para acceder a la documentación técnica, manual de usuario y guía de resolución de problemas:
-👉 **[Descargar Manual Técnico Completo (PDF)](./docs/USER_MANUAL.pdf)**
+El proceso de despliegue de esta herramienta responde a un imperativo de la industria: en un entorno de estudio o producción, el tiempo invertido en configurar dependencias es tiempo perdido. Hemos empaquetado una arquitectura 'Zero-Friction' compilando bibliotecas DSP, los binarios de Python y los renders directamente en el núcleo de la aplicación.
+
+• **Sistemas macOS (Arquitectura unificada)**: El binario `.dmg` garantiza portabilidad absoluta. Atención: Al no contar con un certificado de desarrollador de pago para el Notarization Service de Apple, macOS Gatekeeper marcará el binario con cuarentena. Como ingenieros, sabemos que el método legítimo de bypass local es el 'Clic derecho -> Abrir'. No es un fallo, es el flujo estándar de software open-source de alto rendimiento.
+• **Sistemas Windows**: El payload instalador auto-configura el entorno PATH de Windows de manera silenciosa, evitando conflictos con instalaciones de Python preexistentes en tu máquina.
 
 ---
 
-## ⚖️ Créditos y Licencia
+## 📚 Documentación y Manuales
 
-Este software está bajo la licencia **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. 
-Permite el uso, distribución y modificación de la herramienta para fines no comerciales. Creado y mantenido por **produktes-code**. 
+Para una masterclass técnica exhaustiva, guías de resolución de problemas y detalles completos de la API, por favor descarga nuestro manual oficial:
 
-*© 2026 Brand Music Curator — Todos los derechos reservados.*
+📥 **[USER_MANUAL.pdf (PDF - 7 Languages)](docs/USER_MANUAL.pdf)**
+
+
+---
+
+## ⚖️ Manifiesto de Ingeniería, Créditos y Licencia
+
+Este software es el resultado manifiesto de la profunda ingeniería concebida y articulada desde los laboratorios de produktes-code en unión indisociable con el Ingeniero Jesús Ferrer García (CHUS BZN).
+
+Nos negamos a ofrecer cajas negras simplificadas. Entregamos consolas paramétricas absolutas. Licenciado bajo restricciones de propiedad intelectual y los más estrictos márgenes open source (CC BY-NC-SA 4.0). ESTÁNDAR CORPORATIVO - RETAIL READY. GRADO INGENIERÍA CERTIFICADO.
+
 
 
 ⚠️ Aviso para usuarios de macOS: Al abrir la aplicación por primera vez, macOS puede mostrar un aviso de seguridad. Solución: haz clic derecho sobre la aplicación y selecciona "Abrir", luego haz clic en "Abrir" en el diálogo. Si ya fue bloqueada, ve a Preferencias del Sistema > Privacidad y Seguridad y haz clic en "Abrir de todos modos".
-

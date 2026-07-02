@@ -1,134 +1,83 @@
-> **Nota:** Esta es la documentación oficial en 中文.
-
 <p align="center">
   <img src="build/icon.png" width="128" height="128" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" alt="Brand Music Curator Logo" />
 </p>
 
-<h1 align="center">Brand Music Curator V1.0.0 (中文)</h1>
+<h1 align="center">Brand Music Curator V1.0.0</h1>
 
 <p align="center">
-  <b>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</b><br/>
-  <i>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</i>
+  <b>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</b><br/>
+  <i>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</i>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" alt="Build" />
-  <img src="https://img.shields.io/badge/Version-v1.0.0-blue?style=for-the-badge" alt="Versión 1.0.0" />
-  <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Estado" />
-  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="Licencia" />
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build" />
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="License" />
 </p>
 
-<p align="center">
-  <b>🌐 Multilingual & Multimodal Support / Soporte Multiidioma:</b><br/>
-  🇪🇸 Spanish | 🇬🇧 English | 🇩🇪 German | 🇷🇺 Russian | 🇯🇵 Japanese | 🇺🇦 Ukrainian | 🇨🇳 Chinese
-</p>
+🌐 **其他语言阅读:** [🇬🇧 English](README.md) | [🇪🇸 Español](README_es.md) | [🇩🇪 Deutsch](README_de.md) | [🇷🇺 Русский](README_ru.md) | [🇯🇵 日本語](README_ja.md) | [🇺🇦 Українська](README_uk.md) | **🇨🇳 中文**
 
 ---
 
-## 🎯 Overview / Descripción del Proyecto
+## 🎯 愿景 (介绍)
 
-**Brand Music Curator** es un Gemelo Digital de Audio corporativo diseñado específicamente para el sector *Retail*, franquicias y hostelería a gran escala. Actúa como el cerebro curatorial de tus establecimientos, ofreciendo música ininterrumpida y modulada mediante IA, protegiendo al negocio frente a inspecciones legales y asegurando una experiencia de cliente (CX) perfecta.
+Brand Music Curator 的诞生源于零售业的深深挫败感：背景音乐往往是事后才想到的。作为工程师，我们明白音频不是装饰，而是心理锚点。该工具被设计为终极音频数字孪生。它不仅是一个播放器，而且是一个了解场所能量、调节客流并保护企业免受版权检查的策展大脑。
 
 > [!NOTE]
-> Desarrollado por **produktes-code** y **Antigravity IA** para establecer estándares profesionales en la ingeniería de audio comercial.
+> Developed by **produktes-code** and **Jesús Ferrer (CHUS BZN)** to establish professional standards in commercial engineering.
 
 ---
 
-## 📸 Capturas de Pantalla
-*(Actualizadas: Junio 2026)*
+## 📸 Interface / Ergonomics
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x450/1a1a1a/c3f400?text=Dashboard+Principal+(Dayparting)" alt="Dashboard Principal" />
-</p>
-
----
-
-## ⚙️ Características Principales
-
-1. 🎼 **Análisis de BPM y Key**: Algoritmos avanzados para la detección de energía, tempo y armónicos de los archivos de audio.
-2. 🧠 **Curación IA y NLP**: Generación de *Mixes* matemáticos perfectos usando prompts en lenguaje natural.
-3. 🎧 **Integración de Fuentes (Local y Spotify)**: Capacidad para procesar bibliotecas FLAC locales o realizar integraciones con Spotify API (como fallback).
-4. 🌍 **Soporte Multilingüe (7 idiomas)**: Interfaz de usuario mutante al 100% en Español, Inglés, Alemán, Ruso, Japonés, Ucraniano y Chino.
-5. 🛡️ **Blindaje de Seguridad (SGAE Shield)**: Auditoría blockchain inmutable y botón del pánico para conmutar inmediatamente a un catálogo libre de derechos (*Royalty-Free*).
-
----
-
-## 🏗️ Stack Tecnológico
-
-*   **Frontend Interface:** React 19 + Tailwind CSS + Vite (Empaquetado en Electron para escritorio).
-*   **Backend Server:** Node.js (Express) con Rate Limiting y CORS restrictivo.
-*   **Database Storage:** Better-SQLite3 con cifrado nativo.
-*   **Audio DSP:** Python 3 + `librosa` / `scipy` para análisis de ondas.
-
-### 📁 Estructura de Carpetas
-
-```text
-brand-music-curator/
-├── audio-engine/       # Analizador Python (BPM, Key) y DSP
-├── backend/            # API Express Node.js, Base de datos y Auth
-├── docs/               # Manuales PDF multilingües compilados
-└── player/             # Frontend React/Vite y empaquetador Electron
-```
+![Desktop Interface](docs/screenshots/screenshot-Desktop.png)
 
 
 ---
 
-## 🚀 Instalación y Configuración Rápida
+## ⚙️ 参数大师班 (功能)
 
-### Vía Docker (Recomendado para servidores)
-```bash
-docker build -t brand-music-curator .
-docker run -d -p 4000:4000 -p 5173:5173 --env-file .env brand-music-curator
-```
-
-### Vía Manual (Desarrollo local)
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/produktes-code/brand-music-curator.git
-cd brand-music-curator
-
-# 2. Iniciar el Backend
-cd backend && npm ci && npm start
-
-# 3. Iniciar el Frontend (En otra terminal)
-cd player && npm ci && npm run dev
-```
+- **分析 DSP 引擎**：分析原始音频字节的 RMS 能量、BPM 和调性，实现无缝过渡。
+- **45 种音乐风格矩阵**：通过组合流派百分比创建自定义声音纹理。
+- **独立区域拓扑**：从单台机器控制不同区域的不同氛围。
+- **SGAE 护盾**：在检查期间通过切换到免版税目录来保护免受版权罚款。
+- **绝对后备**：监控本地缓冲，发生故障时无缝切换到 Spotify。
 
 ---
 
-## 📖 Guía de Uso Rápido
+## 🛡️ 屏蔽架构 (安全)
 
-1. **Inicia el servidor** y accede a `http://localhost:5173`.
-2. **Desbloquea el panel** utilizando el PIN de Supervisor (`1234`).
-3. Ve a la pestaña **Mixes** y crea una receta musical (ej. 70% Deep House, 30% Jazz).
-4. Arrastra la música en la pestaña **Dashboard** (Archivos hasta 2 GB con validación de archivos mediante Magic Bytes).
-5. Asigna tus mezclas a las franjas horarias en el **Planificador**.
-6. Haz clic en **Guardar Proyecto**. El hilo musical comenzará a sonar en la tienda conectada.
+防御装甲：
 
----
-
-## 💻 Instaladores Nativos
-
-El proyecto se compila y empaqueta en binarios ejecutables para las distintas plataformas:
-*   **macOS**: Instalador nativo disponible como archivo `.dmg`.
-*   **Windows**: Instalador disponible como archivo `.exe`.
+• 反洪泛：限制请求峰值。
+• 魔法字节：十六进制标头验证。
+• RAM 限制 (2 GB)：防止 OOM 攻击。
 
 ---
 
-## 📚 Documentación Completa
+## 🚀 技术部署 (安装)
 
-Para acceder a la documentación técnica, manual de usuario y guía de resolución de problemas:
-👉 **[Descargar Manual Técnico Completo (PDF)](./docs/USER_MANUAL.pdf)**
+零摩擦架构：
+
+• macOS：Gatekeeper 将隔离二进制文件。工程师解决方案：“右键单击 -> 打开”。
+• Windows：自动 PATH 配置。
 
 ---
 
-## ⚖️ Créditos y Licencia
+## 📚 文档和手册
 
-Este software está bajo la licencia **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. 
-Permite el uso, distribución y modificación de la herramienta para fines no comerciales. Creado y mantenido por **produktes-code**. 
+请下载我们的官方手册：
 
-*© 2026 Brand Music Curator — Todos los derechos reservados.*
+📥 **[USER_MANUAL.pdf (PDF - 7 Languages)](docs/USER_MANUAL.pdf)**
 
 
-⚠️ macOS 用户须知：首次打开应用程序时，macOS 可能会显示安全警告。解决方法：右键单击应用程序并选择"打开"，然后在对话框中单击"打开"。如果已被阻止，请前往系统设置 > 隐私与安全性，然后点击"仍然打开"。
+---
 
+## ⚖️ 工程宣言，鸣谢与许可
+
+由 produktes-code 和 Jesus Ferrer (CHUS BZN) 开发。CC BY-NC-SA 4.0。企业标准。
+
+
+
+⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".

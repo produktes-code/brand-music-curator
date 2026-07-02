@@ -1,134 +1,83 @@
-> **Nota:** Esta es la documentación oficial en Українська.
-
 <p align="center">
   <img src="build/icon.png" width="128" height="128" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" alt="Brand Music Curator Logo" />
 </p>
 
-<h1 align="center">Brand Music Curator V1.0.0 (Українська)</h1>
+<h1 align="center">Brand Music Curator V1.0.0</h1>
 
 <p align="center">
-  <b>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</b><br/>
-  <i>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</i>
+  <b>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</b><br/>
+  <i>Plataforma de Neuro-Arquitectura Sensorial de Audio y Reproductor de Hilo Musical B2B</i>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" alt="Build" />
-  <img src="https://img.shields.io/badge/Version-v1.0.0-blue?style=for-the-badge" alt="Versión 1.0.0" />
-  <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Estado" />
-  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="Licencia" />
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build" />
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="License" />
 </p>
 
-<p align="center">
-  <b>🌐 Multilingual & Multimodal Support / Soporte Multiidioma:</b><br/>
-  🇪🇸 Spanish | 🇬🇧 English | 🇩🇪 German | 🇷🇺 Russian | 🇯🇵 Japanese | 🇺🇦 Ukrainian | 🇨🇳 Chinese
-</p>
+🌐 **Читати українською:** [🇬🇧 English](README.md) | [🇪🇸 Español](README_es.md) | [🇩🇪 Deutsch](README_de.md) | [🇷🇺 Русский](README_ru.md) | [🇯🇵 日本語](README_ja.md) | **🇺🇦 Українська** | [🇨🇳 中文](README_zh.md)
 
 ---
 
-## 🎯 Overview / Descripción del Proyecto
+## 🎯 Бачення
 
-**Brand Music Curator** es un Gemelo Digital de Audio corporativo diseñado específicamente para el sector *Retail*, franquicias y hostelería a gran escala. Actúa como el cerebro curatorial de tus establecimientos, ofreciendo música ininterrumpida y modulada mediante IA, protegiendo al negocio frente a inspecciones legales y asegurando una experiencia de cliente (CX) perfecta.
+Створення Brand Music Curator походить від глибокого розчарування в індустрії роздрібної торгівлі. Як інженери, ми зрозуміли, що аудіо - це не прикраса, а психологічний якір. Цей інструмент був розроблений як кінцевий цифровий аудіо-двійник. Це не програвач, а кураторський мозок, який розуміє енергетику приміщення та захищає бізнес від перевірок авторських прав.
 
 > [!NOTE]
-> Desarrollado por **produktes-code** y **Antigravity IA** para establecer estándares profesionales en la ingeniería de audio comercial.
+> Developed by **produktes-code** and **Jesús Ferrer (CHUS BZN)** to establish professional standards in commercial engineering.
 
 ---
 
-## 📸 Capturas de Pantalla
-*(Actualizadas: Junio 2026)*
+## 📸 Interface / Ergonomics
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x450/1a1a1a/c3f400?text=Dashboard+Principal+(Dayparting)" alt="Dashboard Principal" />
-</p>
-
----
-
-## ⚙️ Características Principales
-
-1. 🎼 **Análisis de BPM y Key**: Algoritmos avanzados para la detección de energía, tempo y armónicos de los archivos de audio.
-2. 🧠 **Curación IA y NLP**: Generación de *Mixes* matemáticos perfectos usando prompts en lenguaje natural.
-3. 🎧 **Integración de Fuentes (Local y Spotify)**: Capacidad para procesar bibliotecas FLAC locales o realizar integraciones con Spotify API (como fallback).
-4. 🌍 **Soporte Multilingüe (7 idiomas)**: Interfaz de usuario mutante al 100% en Español, Inglés, Alemán, Ruso, Japonés, Ucraniano y Chino.
-5. 🛡️ **Blindaje de Seguridad (SGAE Shield)**: Auditoría blockchain inmutable y botón del pánico para conmutar inmediatamente a un catálogo libre de derechos (*Royalty-Free*).
-
----
-
-## 🏗️ Stack Tecnológico
-
-*   **Frontend Interface:** React 19 + Tailwind CSS + Vite (Empaquetado en Electron para escritorio).
-*   **Backend Server:** Node.js (Express) con Rate Limiting y CORS restrictivo.
-*   **Database Storage:** Better-SQLite3 con cifrado nativo.
-*   **Audio DSP:** Python 3 + `librosa` / `scipy` para análisis de ondas.
-
-### 📁 Estructura de Carpetas
-
-```text
-brand-music-curator/
-├── audio-engine/       # Analizador Python (BPM, Key) y DSP
-├── backend/            # API Express Node.js, Base de datos y Auth
-├── docs/               # Manuales PDF multilingües compilados
-└── player/             # Frontend React/Vite y empaquetador Electron
-```
+![Desktop Interface](docs/screenshots/screenshot-Desktop.png)
 
 
 ---
 
-## 🚀 Instalación y Configuración Rápida
+## ⚙️ Майстер-клас параметрів
 
-### Vía Docker (Recomendado para servidores)
-```bash
-docker build -t brand-music-curator .
-docker run -d -p 4000:4000 -p 5173:5173 --env-file .env brand-music-curator
-```
-
-### Vía Manual (Desarrollo local)
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/produktes-code/brand-music-curator.git
-cd brand-music-curator
-
-# 2. Iniciar el Backend
-cd backend && npm ci && npm start
-
-# 3. Iniciar el Frontend (En otra terminal)
-cd player && npm ci && npm run dev
-```
+- **Аналітичний рушій DSP**: Ми аналізуємо необроблені аудіобайти на енергію RMS, BPM і ключ для плавних переходів.
+- **Матриця з 45 музичних стилів**: Створюйте індивідуальні звукові текстури, поєднуючи відсотки жанрів.
+- **Топологія незалежних зон**: Керуйте різними атмосферами з однієї машини.
+- **SGAE Shield**: Захист від штрафів за авторські права шляхом перемикання на безкоштовні каталоги.
+- **Абсолютний резерв**: Прозоре перемикання на Spotify у разі локальних збоїв.
 
 ---
 
-## 📖 Guía de Uso Rápido
+## 🛡️ Архітектура екранування
 
-1. **Inicia el servidor** y accede a `http://localhost:5173`.
-2. **Desbloquea el panel** utilizando el PIN de Supervisor (`1234`).
-3. Ve a la pestaña **Mixes** y crea una receta musical (ej. 70% Deep House, 30% Jazz).
-4. Arrastra la música en la pestaña **Dashboard** (Archivos hasta 2 GB con validación de archivos mediante Magic Bytes).
-5. Asigna tus mezclas a las franjas horarias en el **Planificador**.
-6. Haz clic en **Guardar Proyecto**. El hilo musical comenzará a sonar en la tienda conectada.
+Екранування:
 
----
-
-## 💻 Instaladores Nativos
-
-El proyecto se compila y empaqueta en binarios ejecutables para las distintas plataformas:
-*   **macOS**: Instalador nativo disponible como archivo `.dmg`.
-*   **Windows**: Instalador disponible como archivo `.exe`.
+• Anti-Flood: Блокування сплесків запитів.
+• Magic Bytes: Гексадецимальна перевірка файлів.
+• 2 GB Limit: Захист оперативної пам'яті.
 
 ---
 
-## 📚 Documentación Completa
+## 🚀 Технічне розгортання
 
-Para acceder a la documentación técnica, manual de usuario y guía de resolución de problemas:
-👉 **[Descargar Manual Técnico Completo (PDF)](./docs/USER_MANUAL.pdf)**
+Архітектура 'Zero-Friction':
+
+• macOS: Gatekeeper заблокує файл. Рішення: 'Правий клік -> Відкрити'.
+• Windows: Автоматична конфігурація PATH.
 
 ---
 
-## ⚖️ Créditos y Licencia
+## 📚 Документація та посібники
 
-Este software está bajo la licencia **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. 
-Permite el uso, distribución y modificación de la herramienta para fines no comerciales. Creado y mantenido por **produktes-code**. 
+Завантажте наш офіційний посібник:
 
-*© 2026 Brand Music Curator — Todos los derechos reservados.*
+📥 **[USER_MANUAL.pdf (PDF - 7 Languages)](docs/USER_MANUAL.pdf)**
 
 
-⚠️ Попередження для користувачів macOS: Коли ви вперше відкриваєте програму, macOS може показати попередження безпеки. Рішення: клацніть правою кнопкою миші на програмі та виберіть "Відкрити", потім натисніть "Відкрити" в діалоговому вікні. Якщо її вже заблоковано, перейдіть у Системні параметри > Конфіденційність і безпека та натисніть "Все одно відкрити".
+---
 
+## ⚖️ Інженерний маніфест
+
+Розроблено produktes-code та Jesus Ferrer (CHUS BZN). CC BY-NC-SA 4.0. CORPORATE STANDARD.
+
+
+
+⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".
