@@ -128,3 +128,7 @@ Este software está bajo la licencia **Creative Commons Attribution-NonCommercia
 Permite el uso, distribución y modificación de la herramienta para fines no comerciales. Creado y mantenido por **produktes-code**. 
 
 *© 2026 Brand Music Curator — Todos los derechos reservados.*
+
+
+⚠️ Предупреждение для пользователей macOS: При первом открытии приложения macOS может показать предупреждение безопасности. Решение: щелкните правой кнопкой мыши на приложении и выберите "Открыть", затем нажмите "Открыть" в диалоговом окне. Если оно уже заблокировано, перейдите в Системные настройки > Конфиденциальность и безопасность и нажмите "Все равно открыть".
+

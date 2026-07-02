@@ -123,3 +123,9 @@ Para acceder a la documentación técnica, manual de usuario y guía de resoluci
 Este software es propietario y está protegido bajo derechos de autor. Reservados todos los derechos. Creado y mantenido por **produktes-code** y **Jesús Ferrer García (CHUS BZN)**. Se prohíbe cualquier copia, redistribución o modificación no autorizada de este software.
 
 *© 2026 Brand Music Curator — Todos los derechos reservados.*
+
+
+⚠️ macOS Users Notice: When opening the application for the first time, macOS may show a security warning. Solution: right-click on the application and select "Open", then click "Open" in the dialog. If it was already blocked, go to System Preferences > Privacy & Security and click "Open Anyway".
+
+⚠️ Aviso para usuarios de macOS: Al abrir la aplicación por primera vez, macOS puede mostrar un aviso de seguridad. Solución: haz clic derecho sobre la aplicación y selecciona "Abrir", luego haz clic en "Abrir" en el diálogo. Si ya fue bloqueada, ve a Preferencias del Sistema > Privacidad y Seguridad y haz clic en "Abrir de todos modos".
+
