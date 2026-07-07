@@ -472,17 +472,44 @@ app.post('/api/audio/upload', analysisLimiter, (req, res) => {
   });
 });
 
+// E10: Validacion real de Spotify
+let globalSpotifyStatus = 'checking';
+async function validateSpotifyCreds() {
+  const clientId = process.env.SPOTIFY_CLIENT_ID;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+  
+  if (!clientId || clientId === 'your_spotify_client_id_here' || 
+      !clientSecret || clientSecret === 'your_spotify_client_secret_here') {
+    globalSpotifyStatus = 'missing_credentials';
+    return;
+  }
+  
+  try {
+    const response = await fetch('https://accounts.spotify.com/api/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + Buffer.from(clientId + ':' + clientSecret).toString('base64')
+      },
+      body: 'grant_type=client_credentials'
+    });
+    const data = await response.json();
+    if (data.access_token) {
+      globalSpotifyStatus = 'ok';
+    } else {
+      globalSpotifyStatus = 'invalid_credentials';
+      logger.warn('Spotify credentials invalid or revoked');
+    }
+  } catch (e) {
+    globalSpotifyStatus = 'error_network';
+    logger.warn('Error reaching Spotify API: ' + e.message);
+  }
+}
+validateSpotifyCreds();
+
 app.get('/health/ready', (req, res) => {
   const apiStatus = 'ok';
   
-  const hasSpotifyCreds = 
-    process.env.SPOTIFY_CLIENT_ID && 
-    process.env.SPOTIFY_CLIENT_ID !== 'your_spotify_client_id_here' && 
-    process.env.SPOTIFY_CLIENT_SECRET && 
-    process.env.SPOTIFY_CLIENT_SECRET !== 'your_spotify_client_secret_here';
-  
-  const spotifyStatus = hasSpotifyCreds ? 'ok' : 'missing_credentials';
-
   const { execSync } = require('child_process');
   let mutagenStatus = 'error';
   try {
@@ -493,13 +520,13 @@ app.get('/health/ready', (req, res) => {
   }
 
   const isReady = apiStatus === 'ok';
-
+  
   res.status(isReady ? 200 : 503).json({
-    status: isReady ? 'ready' : 'not_ready',
+    status: isReady && globalSpotifyStatus !== 'invalid_credentials' ? 'ready' : 'degraded',
     checks: {
       api: apiStatus,
       mutagen: mutagenStatus,
-      spotify_credentials: spotifyStatus === 'ok' ? 'ok' : 'optional_missing'
+      spotify_credentials: globalSpotifyStatus
     }
   });
 });
