@@ -56,17 +56,22 @@ Brand Music Curator 的诞生源于零售业的深深挫败感：背景音乐往
 
 ---
 
-## 🚀 技术部署 (安装)
+## 🚀 技术部署 (安装) 与 CI/CD 安装
 
-零摩擦架构将 DSP 和 Python 直接编译到应用程序核心。
+为了保证跨平台稳定性，我们现在采用 **基于 GitHub Actions 的自动化 CI/CD**。
+我们的源代码不再在本地打包，而是在云端的纯 Windows 和 macOS 环境中原生编译。
+
+#### 如何下载和安装
+1. 导航到此存储库的 **[Releases](https://github.com/produktes-code/brand-music-curator/releases)** 部分。
+2. 下载适用于您操作系统的最新自动化版本：
+   - `Brand Music Curator Setup.exe` (Windows)
+   - `Brand Music Curator.dmg` (macOS)
 
 ### 🍎 macOS 用户 (Gatekeeper)
-由于缺乏付费证书，Gatekeeper 将隔离文件。合法的本地绕过方法是：**右键单击应用 -> 打开**。
+合法的本地绕过方法是 **右键单击应用程序 -> 打开**。
 
 ### 🪟 Windows 用户 (SmartScreen)
-运行 `.exe` 时，Windows Defender 可能会显示蓝色警告。点击 **'更多信息'**，然后点击 **'仍要运行'**。
-
----
+点击 **“更多信息”**，然后点击 **“仍要运行”**。
 
 ## 📚 文档和手册
 

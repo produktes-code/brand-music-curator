@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('fs');
 
 // Ensure log directory exists
-const logDir = path.join(__dirname, '../logs');
+const baseDir = process.env.USER_DATA_PATH || require('os').homedir();
+const logDir = path.join(baseDir, 'logs');
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir, { recursive: true });
 }

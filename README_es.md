@@ -56,17 +56,22 @@ En el despliegue Retail y Enterprise, una caída de sistema no es un bug, es pé
 
 ---
 
-## 🚀 Despliegue Técnico (Instalación)
+## 🚀 Despliegue Técnico (Instalación) e Instalación CI/CD
 
-El proceso de despliegue de esta herramienta responde a un imperativo de la industria: en un entorno de estudio o producción, el tiempo invertido en configurar dependencias es tiempo perdido. Hemos empaquetado una arquitectura 'Zero-Friction' compilando bibliotecas DSP, los binarios de Python y los renders directamente en el núcleo de la aplicación.
+Para garantizar estabilidad multiplataforma, ahora empleamos **CI/CD Automatizado vía GitHub Actions**. 
+En lugar de empaquetar de forma local, nuestro código fuente se compila nativamente en entornos puros de Windows y macOS en la nube.
+
+#### Cómo Descargar e Instalar
+1. Navega a la sección **[Releases](https://github.com/produktes-code/brand-music-curator/releases)** de este repositorio.
+2. Descarga la última versión compilada automáticamente para tu Sistema Operativo:
+   - `Brand Music Curator Setup.exe` (Windows)
+   - `Brand Music Curator.dmg` (macOS)
 
 ### 🍎 Usuarios de macOS (Gatekeeper)
-Al no contar con un certificado de desarrollador de pago de Apple, Gatekeeper marcará el binario. El método legítimo de bypass local es hacer **Clic derecho sobre la app -> Abrir** (no hagas doble clic). No es un fallo, es el flujo estándar de software open-source de alto rendimiento.
+Al no contar con un certificado de desarrollador de pago de Apple, Gatekeeper marcará el binario. El método legítimo de bypass local es hacer **Clic derecho sobre la app -> Abrir** (no hagas doble clic).
 
 ### 🪟 Usuarios de Windows (SmartScreen)
-Windows Defender puede mostrar un aviso azul de 'PC protegido' al ejecutar el instalador `.exe` por ser una app sin firma corporativa. Haz clic en **'Más información'** y luego en **'Ejecutar de todas formas'**.
-
----
+Windows Defender puede mostrar un aviso azul de 'PC protegido' al ejecutar el instalador `.exe`. Haz clic en **'Más información'** y luego en **'Ejecutar de todas formas'**.
 
 ## 📚 Documentación y Manuales
 

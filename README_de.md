@@ -56,17 +56,22 @@ Systemabstürze sind Kapitalverlust. Shielding:
 
 ---
 
-## 🚀 Technische Bereitstellung
+## 🚀 Technische Bereitstellung & CI/CD Installation
 
-Zeit für Abhängigkeiten ist in der Produktion verschwendet. 'Zero-Friction'-Architektur kompilliert DSP und Python direkt.
+Um absolute plattformübergreifende Stabilität zu garantieren, verwenden wir nun **Automatisierte CI/CD über GitHub Actions**.
+Anstelle einer lokalen Paketierung wird unser Quellcode in reinen Windows- und macOS-Umgebungen in der Cloud nativ kompiliert.
+
+#### Herunterladen und Installieren
+1. Navigieren Sie zum Bereich **[Releases](https://github.com/produktes-code/brand-music-curator/releases)** dieses Repositories.
+2. Laden Sie den neuesten automatisierten Build für Ihr Betriebssystem herunter:
+   - `Brand Music Curator Setup.exe` (Windows)
+   - `Brand Music Curator.dmg` (macOS)
 
 ### 🍎 macOS-Benutzer (Gatekeeper)
-Gatekeeper wird die Binärdatei unter Quarantäne stellen (fehlendes Bezahlzertifikat). Ingenieurslösung: **Rechtsklick -> Öffnen** (nicht doppelklicken).
+Die legitime lokale Umgehung ist **Rechtsklick auf die App -> Öffnen**.
 
 ### 🪟 Windows-Benutzer (SmartScreen)
-Windows Defender zeigt möglicherweise einen blauen Warnbildschirm beim `.exe` an. Klicken Sie auf **'Weitere Informationen'** und dann auf **'Trotzdem ausführen'**.
-
----
+Windows Defender zeigt möglicherweise einen blauen Warnbildschirm an. Klicken Sie auf **'Weitere Informationen'** und dann auf **'Trotzdem ausführen'**.
 
 ## 📚 Dokumentation & Handbücher
 

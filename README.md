@@ -56,17 +56,22 @@ In Retail and Enterprise deployment, a system crash is not a bug; it is capital 
 
 ---
 
-## 🚀 Technical Deployment (Installation)
+## 🚀 Technical Deployment (Installation) & CI/CD Installation
 
-The deployment process responds to an industry imperative: in production, time spent configuring dependencies is time wasted. We packaged a 'Zero-Friction' architecture compiling DSP libraries, Python binaries, and renderers directly into the application's core.
+To guarantee cross-platform stability, we now employ **Automated CI/CD via GitHub Actions**. 
+Instead of local packaging, our source code is natively compiled on pure Windows and macOS environments in the cloud.
+
+#### How to Download and Install
+1. Navigate to the **[Releases](https://github.com/produktes-code/brand-music-curator/releases)** section of this repository.
+2. Download the latest automated build for your Operating System:
+   - `Brand Music Curator Setup.exe` (Windows)
+   - `Brand Music Curator.dmg` (macOS)
 
 ### 🍎 macOS Users (Gatekeeper)
-Lacking a paid Apple developer certificate, Gatekeeper will quarantine the binary. As engineers, the legitimate local bypass is to **Right-click the app -> Open** (do not double-click). It is the standard flow of high-performance open-source software.
+Lacking a paid Apple developer certificate, Gatekeeper will quarantine the binary. As engineers, the legitimate local bypass is to **Right-click the app -> Open**.
 
 ### 🪟 Windows Users (SmartScreen)
 Windows Defender may show a blue 'Windows protected your PC' warning when running the `.exe` installer. Click **'More info'** and then **'Run anyway'**.
-
----
 
 ## 📚 Documentation & Manuals
 

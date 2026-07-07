@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Upload, FileAudio, AlertCircle, CheckCircle, Trash2 } from 'lucide-react';
 const ALLOWED_MIME_TYPES = ['audio/mpeg',
 // MP3
@@ -121,6 +121,7 @@ export default function MusicUpload({
         setErrorMsg(data.error || t("auto.server_error_while_uploading_f"));
       }
     } catch (err) {
+      console.error(err);
       setErrorMsg(t("auto.network_error_connecting_to_ex"));
     } finally {
       setIsUploading(false);

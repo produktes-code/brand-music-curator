@@ -4,7 +4,7 @@ const fs = require('fs');
 const logger = require('./logger');
 
 // Ensure database directory exists
-const dbDir = path.join(__dirname);
+const dbDir = process.env.USER_DATA_PATH ? path.join(process.env.USER_DATA_PATH, 'db') : path.join(__dirname);
 if (!fs.existsSync(dbDir)) {
   fs.mkdirSync(dbDir, { recursive: true });
 }
@@ -55,6 +55,14 @@ const initDb = () => {
       track_title TEXT NOT NULL,
       status TEXT DEFAULT 'CERTIFIED',
       FOREIGN KEY (hardware_id) REFERENCES zones(hardware_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS ads (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      text TEXT NOT NULL,
+      voice TEXT NOT NULL,
+      status TEXT DEFAULT 'Active',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
   `);
 

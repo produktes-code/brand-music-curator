@@ -23,7 +23,8 @@ function startBackend() {
             ...process.env, 
             ELECTRON_RUN_AS_NODE: '1',
             NODE_PATH: asarNodeModules,
-            PORT: '4000' 
+            PORT: '4000',
+            USER_DATA_PATH: app.getPath('userData')
         }
     });
 
@@ -46,8 +47,8 @@ function createWindow() {
         height: 800,
         backgroundColor: '#0a0a0a',
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false // Simplificamos para MVP local
+            nodeIntegration: false,
+            contextIsolation: true
         },
         title: 'Brand Music Curator',
     });

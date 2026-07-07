@@ -14,7 +14,7 @@ const pythonBin = process.platform === 'win32'
 
 
 // Auto-generate .env with a secure random key if it doesn't exist
-const envPath = path.resolve(__dirname, '../.env');
+const envPath = process.env.USER_DATA_PATH ? path.join(process.env.USER_DATA_PATH, '.env') : path.resolve(__dirname, '../.env');
 if (!fs.existsSync(envPath)) {
   const randomKey = crypto.randomBytes(32).toString('hex');
   const envContent = `# Backend - Auto-Generated Configuration
@@ -33,14 +33,25 @@ require('dotenv').config({ path: envPath });
 
 const app = express();
 
-const origins = (process.env.ALLOWED_ORIGINS || "*").split(",");
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(",") : null;
 app.use(cors({
-  origin: origins.length === 1 && origins[0] === "*" ? "*" : origins,
+  origin: (origin, callback) => {
+    // Siempre permitir file:// o null (típico de Electron) o llamadas locales
+    if (!origin || origin === 'null' || origin.startsWith('file://') || origin.startsWith('http://localhost:')) {
+      return callback(null, true);
+    }
+    if (allowedOrigins) {
+      if (allowedOrigins.includes("*") || allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error('CORS Not Allowed'));
+    }
+    callback(new Error('CORS Not Allowed for external domains'));
+  },
   credentials: true
 }));
 
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+const uploadsDir = process.env.USER_DATA_PATH ? path.join(process.env.USER_DATA_PATH, 'uploads') : path.join(__dirname, 'uploads');
+app.use('/uploads', express.static(uploadsDir));
 
 // --- GET / WELCOME & STATUS ---
 app.get('/', (req, res) => {
@@ -282,11 +293,45 @@ app.put('/api/schedule', curationLimiter, (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+// --- API AUDIT ENDPOINTS (SGAE SHIELD) ---
+app.post('/api/audit', curationLimiter, (req, res) => {
+  const { hardware_id, track_id, track_title } = req.body;
+  const hwId = hardware_id || 'FBX-88A-921'; // Fallback to seeded hardware_id if not provided
+  const stmt = db.prepare('INSERT INTO sgae_audit_log (hardware_id, track_id, track_title) VALUES (?, ?, ?)');
+  try {
+    const info = stmt.run(hwId, track_id || 'RF-101', track_title || 'Corporate Calm');
+    res.json({ success: true, id: info.lastInsertRowid });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// --- API ADS ENDPOINTS ---
+app.get('/api/ads', curationLimiter, (req, res) => {
+  try {
+    const ads = db.prepare('SELECT * FROM ads ORDER BY created_at DESC').all();
+    res.json(ads);
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post('/api/ads', curationLimiter, (req, res) => {
+  const { text, voice } = req.body;
+  const stmt = db.prepare('INSERT INTO ads (text, voice) VALUES (?, ?)');
+  try {
+    const info = stmt.run(text, voice);
+    res.json({ success: true, id: info.lastInsertRowid });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 // --- SECCIÓN DE SUBIDA Y VALIDACIÓN DE AUDIO ---
 const multer = require('multer');
 
 // Asegurar que existe el directorio de subidas
-const uploadsDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
 }
