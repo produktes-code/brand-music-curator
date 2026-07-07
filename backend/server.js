@@ -385,6 +385,8 @@ const upload = multer({
   fileFilter: fileFilter,
   limits: {
     fileSize: 2048 * 1024 * 1024, // Límite de 2GB por archivo
+    files: 5, // Limitar a maximo 5 archivos a la vez para prevenir exhaustion de memoria RAM
+    fields: 10
   }
 });
 
