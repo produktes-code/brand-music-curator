@@ -33,6 +33,33 @@ require('dotenv').config({ path: envPath });
 
 const app = express();
 
+// E20: Cache con política de expiración (evita memory leak de app.locals.cache)
+app.locals.cache = {
+  data: new Map(),
+  set(key, value, ttlMs = 3600 * 1000) { // 1 hora por defecto
+    this.data.set(key, { value, expiresAt: Date.now() + ttlMs });
+  },
+  get(key) {
+    const item = this.data.get(key);
+    if (!item) return null;
+    if (Date.now() > item.expiresAt) {
+      this.data.delete(key);
+      return null;
+    }
+    return item.value;
+  },
+  cleanup() {
+    const now = Date.now();
+    for (const [key, item] of this.data.entries()) {
+      if (now > item.expiresAt) {
+        this.data.delete(key);
+      }
+    }
+  }
+};
+setInterval(() => app.locals.cache.cleanup(), 60 * 60 * 1000); // Limpieza programada cada hora
+
+
 const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(",") : null;
 app.use(cors({
   origin: (origin, callback) => {
