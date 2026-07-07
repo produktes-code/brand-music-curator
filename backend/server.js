@@ -94,6 +94,18 @@ const analysisLimiter = createLimiter(10, 60);
 const curationLimiter = createLimiter(30, 60);
 
 // --- PILAR 2: PUENTE PYTHON (CEREBRO DSP) ---
+class PromiseQueue {
+  constructor() {
+    this.queue = Promise.resolve();
+  }
+  add(operation) {
+    return new Promise((resolve, reject) => {
+      this.queue = this.queue.then(operation).then(resolve).catch(reject);
+    });
+  }
+}
+const pythonProcessQueue = new PromiseQueue();
+
 /**
  * @openapi
  * /api/audio/process:
@@ -120,21 +132,24 @@ const curationLimiter = createLimiter(30, 60);
 app.post('/api/audio/process', analysisLimiter, (req, res) => {
   const { trackPath, highPassFilter, targetBpm } = req.body;
   
-  logger.info(`[Python Bridge] Invoking analyzer.py for ${trackPath} using ${pythonBin}`);
-  
-  const pythonProcess = spawn(pythonBin, [
-    path.resolve(__dirname, '..', 'audio-engine', 'analyzer.py'), 
-    '--file', trackPath, 
-    '--highpass', highPassFilter ? '80' : '0',
-    '--target-bpm', targetBpm || 'auto'
-  ]);
+  pythonProcessQueue.add(() => new Promise((resolve) => {
+    logger.info(`[Python Bridge] Invoking analyzer.py for ${trackPath} using ${pythonBin}`);
+    
+    const pythonProcess = spawn(pythonBin, [
+      path.resolve(__dirname, '..', 'audio-engine', 'analyzer.py'), 
+      '--file', trackPath, 
+      '--highpass', highPassFilter ? '80' : '0',
+      '--target-bpm', targetBpm || 'auto'
+    ]);
 
-  let result = '';
-  pythonProcess.stdout.on('data', (data) => { result += data.toString(); });
-  
-  pythonProcess.on('close', (code) => {
-    res.json({ status: 'success', pythonExitCode: code, output: result || 'DSP Processing applied successfully.' });
-  });
+    let result = '';
+    pythonProcess.stdout.on('data', (data) => { result += data.toString(); });
+    
+    pythonProcess.on('close', (code) => {
+      res.json({ status: 'success', pythonExitCode: code, output: result || 'DSP Processing applied successfully.' });
+      resolve(); // Liberar la cola
+    });
+  }));
 });
 
 // --- PILAR 3: TELEMETRÍA DE HARDWARE ---
