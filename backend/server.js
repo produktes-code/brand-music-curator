@@ -489,6 +489,30 @@ app.get('/health/ready', (req, res) => {
   });
 });
 
+// E8: Limpieza automática de uploads antiguos
+function cleanupUploads() {
+  if (!fs.existsSync(uploadsDir)) return;
+  const now = Date.now();
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+  
+  fs.readdir(uploadsDir, (err, files) => {
+    if (err) return logger.error(`Error leyendo uploads para limpieza: ${err}`);
+    files.forEach(file => {
+      const filePath = path.join(uploadsDir, file);
+      fs.stat(filePath, (err, stats) => {
+        if (!err && stats.isFile() && (now - stats.mtimeMs > ONE_DAY_MS)) {
+          fs.unlink(filePath, err => {
+            if (!err) logger.info(`Limpieza: Archivo antiguo borrado -> ${file}`);
+          });
+        }
+      });
+    });
+  });
+}
+
+cleanupUploads(); // Limpiar al inicio
+setInterval(cleanupUploads, 60 * 60 * 1000); // Ejecutar cada hora
+
 const INITIAL_PORT = parseInt(process.env.PORT || '4000', 10);
 const MAX_PORT = 4002;
 
