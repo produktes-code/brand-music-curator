@@ -489,7 +489,32 @@ app.get('/health/ready', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  logger.info(`Antigravity Node Backend running on port ${PORT}`);
-});
+const INITIAL_PORT = parseInt(process.env.PORT || '4000', 10);
+const MAX_PORT = 4002;
+
+function startServer(port) {
+  const server = app.listen(port, () => {
+    logger.info(`Antigravity Node Backend running on port ${port}`);
+    // Escribir el puerto asignado para que el frontend (Electron) pueda leerlo
+    const portFilePath = process.env.USER_DATA_PATH 
+      ? path.join(process.env.USER_DATA_PATH, '.assigned_port') 
+      : path.resolve(__dirname, '../.assigned_port');
+    fs.writeFileSync(portFilePath, port.toString(), 'utf8');
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      logger.warn(`Port ${port} is busy. Trying the next port...`);
+      if (port < MAX_PORT) {
+        startServer(port + 1);
+      } else {
+        logger.error(`All ports up to ${MAX_PORT} are busy. Could not start backend.`);
+        process.exit(1);
+      }
+    } else {
+      logger.error(`Server error: ${err.message}`);
+    }
+  });
+}
+
+startServer(INITIAL_PORT);
