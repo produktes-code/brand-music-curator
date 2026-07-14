@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useStore } from '../../store/useStore';
 import { ShieldAlert } from 'lucide-react';
 import MusicUpload from '../MusicUpload';
@@ -6,22 +6,74 @@ import MusicUpload from '../MusicUpload';
 export default function DashboardTab({ t }) {
   const {
     activeZoneId, setActiveZoneId, groups, isLocked, setShowPinModal,
-    activeTrack, isPanicMode, iotModulation, playerProgress, setPlayerProgress,
+    activeTrack, setActiveTrack, isPanicMode, iotModulation, playerProgress, setPlayerProgress,
     isPlaying, setIsPlaying, telemetry
   } = useStore();
 
   const canvasRef = useRef(null);
+  const audioRef = useRef(null);
+  const audioCtxRef = useRef(null);
+  const analyserRef = useRef(null);
+  const sourceRef = useRef(null);
+  const dataArrayRef = useRef(null);
 
-  // Player Progress Simulation
+  // Initialize Web Audio API
+  useEffect(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+      audioRef.current.crossOrigin = "anonymous";
+    }
+
+    const setupAudio = () => {
+      if (!audioCtxRef.current) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtxRef.current = new AudioContext();
+        analyserRef.current = audioCtxRef.current.createAnalyser();
+        analyserRef.current.fftSize = 128;
+        const bufferLength = analyserRef.current.frequencyBinCount;
+        dataArrayRef.current = new Uint8Array(bufferLength);
+
+        sourceRef.current = audioCtxRef.current.createMediaElementSource(audioRef.current);
+        sourceRef.current.connect(analyserRef.current);
+        analyserRef.current.connect(audioCtxRef.current.destination);
+      }
+      if (audioCtxRef.current.state === 'suspended') {
+        audioCtxRef.current.resume();
+      }
+    };
+
+    const playAudio = () => {
+      setupAudio();
+      if (audioRef.current.src) {
+        audioRef.current.play().catch(e => console.error('Audio play error:', e));
+      }
+    };
+
+    if (isPlaying) {
+      playAudio();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
+
+  useEffect(() => {
+    if (activeTrack && activeTrack.url) {
+      audioRef.current.src = activeTrack.url;
+      if (isPlaying) {
+        audioRef.current.play().catch(e => console.error('Audio play error:', e));
+      }
+    }
+  }, [activeTrack]);
+
+  // Player Progress
   useEffect(() => {
     let interval;
     if (isPlaying) {
       interval = setInterval(() => {
-        setPlayerProgress(prev => {
-          if (prev >= 100) return 0;
-          return prev + (100 / (3 * 60)); // Simulates a 3-minute track (updated every second)
-        });
-      }, 1000);
+        if (audioRef.current && audioRef.current.duration) {
+          setPlayerProgress((audioRef.current.currentTime / audioRef.current.duration) * 100);
+        }
+      }, 500);
     }
     return () => clearInterval(interval);
   }, [isPlaying, setPlayerProgress]);
@@ -40,6 +92,13 @@ export default function DashboardTab({ t }) {
       resize();
       const draw = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        let freqData = 0;
+        if (analyserRef.current && dataArrayRef.current) {
+          analyserRef.current.getByteFrequencyData(dataArrayRef.current);
+          freqData = dataArrayRef.current.reduce((a, b) => a + b, 0) / dataArrayRef.current.length;
+        }
+
         const time = Date.now() * 0.001;
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
@@ -53,6 +112,7 @@ export default function DashboardTab({ t }) {
             let noise;
             if (isPlaying) {
               noise = Math.sin(angle * (3 + j) + time * 2) * (15 + j * 5) + Math.cos(angle * (2 - j) + time * 3) * 10;
+              noise += (freqData / 255) * 50; // React to actual audio
             } else {
               noise = Math.sin(angle * (3 + j) + time * 0.5) * (5 + j * 2);
             }
@@ -76,8 +136,21 @@ export default function DashboardTab({ t }) {
     }
   }, [isPlaying]);
 
-  const handleUploadSuccess = () => {
-    // handled inside component or via store
+  const handleUploadSuccess = (files) => {
+    if (files && files.length > 0) {
+      const file = files[0];
+      const url = `http://localhost:4000/uploads/${file.filename}`;
+      setActiveTrack({
+        id: file.filename,
+        title: file.originalname,
+        artist: 'Uploaded File',
+        duration: 'Unknown',
+        source: 'Server',
+        album: 'Uploads',
+        url: url
+      });
+      setIsPlaying(true);
+    }
   };
 
   return (

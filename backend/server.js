@@ -8,10 +8,9 @@ const fs = require('fs');
 const logger = require('./logger');
 const db = require('./db');
 
-const pythonBin = process.platform === 'win32'
-  ? path.resolve(__dirname, '..', 'audio-engine', 'standalone-python-windows', 'python.exe')
-  : path.resolve(__dirname, '..', 'audio-engine', 'standalone-python', 'bin', 'python3');
-
+const analyzerPath = process.platform === 'win32'
+  ? path.resolve(__dirname, '..', 'audio-engine', 'dist', 'analyzer.exe')
+  : path.resolve(__dirname, '..', 'audio-engine', 'dist', 'analyzer');
 
 // Auto-generate .env with a secure random key if it doesn't exist
 const envPath = process.env.USER_DATA_PATH ? path.join(process.env.USER_DATA_PATH, '.env') : path.resolve(__dirname, '../.env');
@@ -160,10 +159,9 @@ app.post('/api/audio/process', analysisLimiter, (req, res) => {
   const { trackPath, highPassFilter, targetBpm } = req.body;
   
   pythonProcessQueue.add(() => new Promise((resolve) => {
-    logger.info(`[Python Bridge] Invoking analyzer.py for ${trackPath} using ${pythonBin}`);
+    logger.info(`[Python Bridge] Invoking analyzer for ${trackPath} using ${analyzerPath}`);
     
-    const pythonProcess = spawn(pythonBin, [
-      path.resolve(__dirname, '..', 'audio-engine', 'analyzer.py'), 
+    const pythonProcess = spawn(analyzerPath, [
       '--file', trackPath, 
       '--highpass', highPassFilter ? '80' : '0',
       '--target-bpm', targetBpm || 'auto'
@@ -172,8 +170,22 @@ app.post('/api/audio/process', analysisLimiter, (req, res) => {
     let result = '';
     pythonProcess.stdout.on('data', (data) => { result += data.toString(); });
     
+    pythonProcess.on('error', (err) => {
+      logger.error(`[Python Bridge] Error spawning python process: ${err.message}`);
+      if (!res.headersSent) {
+        res.status(500).json({ status: 'error', message: 'Motor de audio no disponible', detail: err.message });
+      }
+      resolve();
+    });
+
     pythonProcess.on('close', (code) => {
-      res.json({ status: 'success', pythonExitCode: code, output: result || 'DSP Processing applied successfully.' });
+      if (!res.headersSent) {
+        if (code === 0) {
+          res.json({ status: 'success', pythonExitCode: code, output: result });
+        } else {
+          res.status(500).json({ status: 'error', message: 'Error in DSP processing', pythonExitCode: code, output: result });
+        }
+      }
       resolve(); // Liberar la cola
     });
   }));
@@ -539,11 +551,14 @@ validateSpotifyCreds();
 app.get('/health/ready', (req, res) => {
   const apiStatus = 'ok';
   
-  const { execSync } = require('child_process');
+  const fs = require('fs');
   let mutagenStatus = 'error';
   try {
-    execSync(`"${pythonBin}" -c "import librosa"`, { stdio: 'ignore' });
-    mutagenStatus = 'ok';
+    if (fs.existsSync(analyzerPath)) {
+      mutagenStatus = 'ok';
+    } else {
+      mutagenStatus = 'missing';
+    }
   } catch (e) {
     mutagenStatus = 'missing';
   }
