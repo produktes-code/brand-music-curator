@@ -53,7 +53,7 @@ jobs:
         shell: bash
         working-directory: ./player
         env:
-          PUBLISH: never
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
