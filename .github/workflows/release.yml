@@ -41,7 +41,12 @@ jobs:
 
       - name: Build and Package Electron App
         run: |
-          npm run pack:all
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            npm run pack:win
+          else
+            npm run pack:mac
+          fi
+        shell: bash
         working-directory: ./player
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
