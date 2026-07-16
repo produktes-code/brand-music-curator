@@ -168,8 +168,8 @@ export default function DashboardTab({ t }) {
               onChange={(e) => setActiveZoneId(e.target.value)}
               disabled={isLocked}
             >
-              {groups.length > 0 && groups.flatMap(g => g.zones).map(z => (
-                <option key={z.hwid || Math.random()} value={z.location} className="text-base text-black">{z.location}</option>
+              {groups.length > 0 && groups.flatMap(g => g.zones).map((z, i) => (
+                <option key={z.hwid || i} value={z.location} className="text-base text-black">{z.location}</option>
               ))}
               {(!groups || groups.length === 0 || groups.flatMap(g => g.zones).length === 0) && <option value="Lux Boutique - Madrid" className="text-base text-black">Lux Boutique - Madrid</option>}
             </select>

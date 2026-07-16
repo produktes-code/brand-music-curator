@@ -2,6 +2,7 @@ import React from 'react';
 import { useStore } from '../../store/useStore';
 
 import { useState } from 'react';
+import { ShieldAlert } from 'lucide-react';
 
 export default function SgaeShieldTab({ t }) {
   const {

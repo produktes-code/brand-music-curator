@@ -20,7 +20,7 @@ export default function SettingsTab({ t }) {
     alert(t("auto.engineering_settings_saved_su"));
   };
 
-  return (
+  const renderLockedWarning = () => (
     <div className="bg-error/10 border border-error/20 rounded-xl p-4 flex items-center gap-4 mb-6">
       <ShieldAlert className="text-error w-6 h-6 shrink-0" />
       <div><h4 className="text-error font-medium text-sm">{t("lock.title")}</h4></div>

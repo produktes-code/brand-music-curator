@@ -20,6 +20,9 @@ export default function MixesTab({ t }) {
   const [brandPromptText, setBrandPromptText] = useState('');
   const [isGeneratingMix, setIsGeneratingMix] = useState(false);
 
+  const AVAILABLE_GENRES = ['Pop', 'Electronic', 'Jazz', 'Classical', 'Rock', 'Ambient', 'Lounge', 'Acoustic', 'Indie Pop', 'Deep House'];
+  const ENERGY_LEVELS = ['Low', 'Medium', 'High'];
+
   const handleAddMix = async () => {
     if (!newMixName.trim() || isLocked) return;
     try {
@@ -66,7 +69,7 @@ export default function MixesTab({ t }) {
     } catch (e) { console.error(e); }
   };
 
-  const handleGenerateMixFromBrand = async () => {
+  const handleGenerateBrandMix = async () => {
     if (!brandPromptText.trim() || isLocked) return;
     setIsGeneratingMix(true);
     try {
@@ -83,7 +86,7 @@ export default function MixesTab({ t }) {
     } catch (e) { console.error(e); } finally { setIsGeneratingMix(false); }
   };
 
-  return (
+  const renderLockedWarning = () => (
     <div className="bg-error/10 border border-error/20 rounded-xl p-4 flex items-center gap-4 mb-6">
       <ShieldAlert className="text-error w-6 h-6 shrink-0" />
       <div><h4 className="text-error font-medium text-sm">{t("lock.title")}</h4></div>
@@ -134,7 +137,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
                 <label className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block font-mono-data">{t("auto.style_a_base")}</label>
                 <select className="w-full bg-surface-container-highest border border-white/10 rounded-lg px-3 py-2 text-sm text-on-background focus:border-primary-fixed focus:outline-none disabled:opacity-50 appearance-none" value={mix.genre_a} disabled={isLocked} onChange={e => {
               const nm = [...mixes];
-              nm[idx].genre_a = e.target.value;
+              nm[idx] = { ...nm[idx], genre_a: e.target.value };
               setMixes(nm);
             }}>
                   {AVAILABLE_GENRES.map(g => <option key={g} value={g}>{g}</option>)}
@@ -144,7 +147,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
                 <label className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block font-mono-data">{t("auto.style_b")}</label>
                 <select className="w-full bg-surface-container-highest border border-white/10 rounded-lg px-3 py-2 text-sm text-on-background focus:border-primary-fixed focus:outline-none disabled:opacity-50 appearance-none" value={mix.genre_b} disabled={isLocked} onChange={e => {
               const nm = [...mixes];
-              nm[idx].genre_b = e.target.value;
+              nm[idx] = { ...nm[idx], genre_b: e.target.value };
               setMixes(nm);
             }}>
                   {AVAILABLE_GENRES.map(g => <option key={g} value={g}>{g}</option>)}
@@ -159,7 +162,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
               </div>
               <input type="range" min="0" max="100" className="w-full h-1.5 bg-surface-container-highest rounded-full appearance-none accent-primary-fixed disabled:opacity-50" value={mix.ratio} disabled={isLocked} onChange={e => {
             const nm = [...mixes];
-            nm[idx].ratio = parseInt(e.target.value);
+            nm[idx] = { ...nm[idx], ratio: parseInt(e.target.value) };
             setMixes(nm);
           }} />
             </div>
@@ -169,7 +172,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
                 <label className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block font-mono-data">{t("auto.energy_tempo")}</label>
                 <select className="w-full bg-surface-container-highest border border-white/10 rounded-lg px-3 py-2 text-sm text-on-background focus:border-primary-fixed disabled:opacity-50 appearance-none" value={mix.energy_level} disabled={isLocked} onChange={e => {
               const nm = [...mixes];
-              nm[idx].energy_level = e.target.value;
+              nm[idx] = { ...nm[idx], energy_level: e.target.value };
               setMixes(nm);
             }}>
                   {ENERGY_LEVELS.map(el => <option key={el} value={el}>{t({
@@ -187,7 +190,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
                 <label className="text-[10px] text-on-surface-variant uppercase tracking-widest mb-2 block font-mono-data">{t("auto.cu_as_ads")}</label>
                 <select className="w-full bg-surface-container-highest border border-white/10 rounded-lg px-3 py-2 text-sm text-on-background focus:border-primary-fixed disabled:opacity-50 appearance-none" value={mix.ad_frequency} disabled={isLocked} onChange={e => {
               const nm = [...mixes];
-              nm[idx].ad_frequency = parseInt(e.target.value);
+              nm[idx] = { ...nm[idx], ad_frequency: parseInt(e.target.value) };
               setMixes(nm);
             }}>
                   <option value={15}>{t("auto.every_15m")}</option>
@@ -202,7 +205,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
               <label className="flex items-center gap-3 text-sm text-on-surface-variant cursor-pointer hover:text-on-background transition-colors">
                 <input type="checkbox" className="rounded border-white/20 bg-surface-container-highest text-primary-fixed focus:ring-primary-fixed/50 disabled:opacity-50" checked={mix.blockExplicit} disabled={isLocked} onChange={() => {
               const nm = [...mixes];
-              nm[idx].blockExplicit = !nm[idx].blockExplicit;
+              nm[idx] = { ...nm[idx], blockExplicit: !nm[idx].blockExplicit };
               setMixes(nm);
             }} />
                 {t("auto.block_explicit_lyrics")}
@@ -210,7 +213,7 @@ return ( <div className="animate-in fade-in duration-500 container mx-auto px-co
               <label className="flex items-center gap-3 text-sm text-on-surface-variant cursor-pointer hover:text-on-background transition-colors">
                 <input type="checkbox" className="rounded border-white/20 bg-surface-container-highest text-primary-fixed focus:ring-primary-fixed/50 disabled:opacity-50" checked={mix.blockUrban} disabled={isLocked} onChange={() => {
               const nm = [...mixes];
-              nm[idx].blockUrban = !nm[idx].blockUrban;
+              nm[idx] = { ...nm[idx], blockUrban: !nm[idx].blockUrban };
               setMixes(nm);
             }} />
                 {t("auto.block_reggaeton_urban")}

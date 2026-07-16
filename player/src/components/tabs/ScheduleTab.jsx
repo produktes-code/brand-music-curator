@@ -15,6 +15,35 @@ export default function ScheduleTab({ t }) {
     fetchTelemetry, fetchData, API_URL
   } = useStore();
 
+  const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const DAY_TRANSLATIONS = {
+    monday: 'auto.monday',
+    tuesday: 'auto.tuesday',
+    wednesday: 'auto.wednesday',
+    thursday: 'auto.thursday',
+    friday: 'auto.friday',
+    saturday: 'auto.saturday',
+    sunday: 'auto.sunday'
+  };
+  const SLOTS = ['morning', 'afternoon', 'evening', 'night'];
+  const SLOT_TRANSLATIONS = {
+    morning: 'auto.morning',
+    afternoon: 'auto.afternoon',
+    evening: 'auto.evening',
+    night: 'auto.night'
+  };
+  const SLOT_TIMES = {
+    morning: '06:00 - 12:00',
+    afternoon: '12:00 - 18:00',
+    evening: '18:00 - 24:00',
+    night: '00:00 - 06:00'
+  };
+
+  const getMixIdForSlot = (day, slot) => {
+    const entry = scheduleMatrix?.find(s => s.day_of_week === day && s.time_slot === slot);
+    return entry ? entry.mix_id : null;
+  };
+
   const handleUpdateSchedule = async (day, slot, mixId) => {
     if (isLocked) return;
     try {
@@ -27,7 +56,7 @@ export default function ScheduleTab({ t }) {
     } catch (e) { console.error(e); }
   };
 
-  return (
+  const renderLockedWarning = () => (
     <div className="bg-error/10 border border-error/20 rounded-xl p-4 flex items-center gap-4 mb-6">
       <ShieldAlert className="text-error w-6 h-6 shrink-0" />
       <div><h4 className="text-error font-medium text-sm">{t("lock.title")}</h4></div>

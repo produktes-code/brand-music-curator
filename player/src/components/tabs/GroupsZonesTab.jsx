@@ -37,7 +37,7 @@ export default function GroupsZonesTab({ t }) {
     } catch (e) { console.error(e); }
   };
 
-  return (
+  const renderLockedWarning = () => (
     <div className="bg-error/10 border border-error/20 rounded-xl p-4 flex items-center gap-4 mb-6">
       <ShieldAlert className="text-error w-6 h-6 shrink-0" />
       <div>
@@ -47,7 +47,7 @@ export default function GroupsZonesTab({ t }) {
     </div>
   );
 
-return ( <div className="animate-in fade-in duration-500 container mx-auto px-container-margin py-6 max-w-7xl">
+  return ( <div className="animate-in fade-in duration-500 container mx-auto px-container-margin py-6 max-w-7xl">
       {isLocked && renderLockedWarning()}
       <div className="flex justify-between items-center mb-8">
         <h2 className="font-headline-lg text-3xl font-light text-on-background">🏢 {t("nav.groups")}</h2>

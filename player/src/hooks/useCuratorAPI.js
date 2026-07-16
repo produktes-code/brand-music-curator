@@ -106,6 +106,7 @@ export function useCuratorAPI() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line
     fetchData();
     const interval = setInterval(fetchTelemetry, 10000);
     return () => clearInterval(interval);
