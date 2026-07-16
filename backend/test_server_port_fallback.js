@@ -24,7 +24,7 @@ async function runTest() {
     const match = output.match(/running on port (\d+)/);
     if (match) {
       const port = parseInt(match[1], 10);
-      if (port !== 4000) {
+      if (port > 4000) {
         console.log(`✅ TEST PASSED: Server successfully fell back to port ${port}.`);
         stopServer(serverProc);
         blocker.close();
