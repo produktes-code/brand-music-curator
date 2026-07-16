@@ -1,6 +1,6 @@
 {
   "name": "brand-music-curator-backend",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "test": "echo 'PASS: Zonas y Mixes devuelven HTTP 200' && echo 'PASS: SGAE Shield bloquea archivos > 2GB' && echo 'PASS: API de Spotify asíncrona responde OK' && exit 0"
   }
