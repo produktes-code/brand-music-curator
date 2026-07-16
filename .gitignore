@@ -51,3 +51,8 @@ docker-compose.override.yml
 # Standalone runtimes and binary distributions
 audio-engine/standalone-python/
 audio-engine/standalone-python-windows/
+
+# Temp files
+.assigned_port
+*.sqlite
+*.save
