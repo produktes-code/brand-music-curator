@@ -4,18 +4,14 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v*'
 
 permissions:
   contents: write
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        os: [macos-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-
+  build-macos:
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,7 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -39,16 +35,91 @@ jobs:
           pyinstaller --name analyzer --onefile analyzer.py
 
       - name: Install Node Dependencies
-        run: |
-          npm install
+        run: npm ci || npm install
         working-directory: ./player
 
-      - name: Build and Package Electron App
+      - name: Build and Package Electron App (macOS)
         run: |
-          if [ "$RUNNER_OS" == "Windows" ]; then
-            npm run pack:win
-          else
-            npm run pack:mac
-          fi
-        shell: bash
+          npm run build --if-present
+          npm run pack:mac
         working-directory: ./player
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+          WIN_CSC_LINK: ""
+          WIN_CSC_KEY_PASSWORD: ""
+
+      - name: Upload DMG Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-installer
+          path: player/dist-electron/*.dmg
+          if-no-files-found: error
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python Dependencies & Compile Backend
+        run: |
+          cd audio-engine
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+          pyinstaller --name analyzer --onefile analyzer.py
+
+      - name: Install Node Dependencies
+        run: npm ci || npm install
+        working-directory: ./player
+
+      - name: Build and Package Electron App (Windows)
+        run: |
+          npm run build --if-present
+          npm run pack:win
+        working-directory: ./player
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+          WIN_CSC_LINK: ""
+          WIN_CSC_KEY_PASSWORD: ""
+
+      - name: Upload EXE Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: player/dist-electron/*.exe
+          if-no-files-found: error
+
+  upload-release:
+    needs: [build-macos, build-windows]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download macOS Installer
+        uses: actions/download-artifact@v4
+        with:
+          name: macos-installer
+          path: release-assets
+          
+      - name: Download Windows Installer
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-installer
+          path: release-assets
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: release-assets/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
