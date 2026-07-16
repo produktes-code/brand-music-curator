@@ -35,27 +35,12 @@ jobs:
   publish:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - name: Get version from package.json
-        id: get_version
-        run: |
-          if [ -f "player/package.json" ]; then
-            VER=$(node -p "require('./player/package.json').version")
-          elif [ -f "electron-app/package.json" ]; then
-            VER=$(node -p "require('./electron-app/package.json').version")
-          else
-            VER=$(node -p "require('./package.json').version")
-          fi
-          echo "VERSION=v$VER" >> $GITHUB_ENV
       - uses: actions/download-artifact@v4
         with:
           path: dist
       - uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ env.VERSION }}
           files: |
             dist/**/*.dmg
             dist/**/*.exe
