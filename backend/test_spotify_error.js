@@ -54,16 +54,17 @@ async function main() {
     const json = JSON.parse(res.body);
     if (json.status === 'degraded' && json.checks.spotify_credentials === 'invalid_credentials') {
       console.log("✅ TEST PASSED: El health check devolvio 'degraded' debido a credenciales de Spotify invalidas.");
+      stopServer(serverProcess);  // OJO: process.exit() no ejecuta finally — matar ANTES de salir
       process.exit(0);
     } else {
       console.error(`❌ TEST FAILED: Response was ${res.body}`);
+      stopServer(serverProcess);
       process.exit(1);
     }
   } catch(e) {
     console.error(`❌ TEST FAILED: error -> ${e.message}`);
-    process.exit(1);
-  } finally {
     stopServer(serverProcess);
+    process.exit(1);
   }
 }
 

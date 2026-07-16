@@ -63,18 +63,21 @@ async function main() {
     if (!oldExists && newExists) {
       console.log("✅ TEST PASSED: Archivo antiguo borrado, archivo nuevo mantenido.");
       if (fs.existsSync(newFile)) fs.unlinkSync(newFile);
+      stopServer(serverProcess);  // OJO: process.exit() no ejecuta finally — matar ANTES de salir
       process.exit(0);
     } else {
       console.error(`❌ TEST FAILED: oldExists=${oldExists}, newExists=${newExists}`);
       if (fs.existsSync(oldFile)) fs.unlinkSync(oldFile);
       if (fs.existsSync(newFile)) fs.unlinkSync(newFile);
+      stopServer(serverProcess);
       process.exit(1);
     }
   } catch(e) {
     console.error(`❌ TEST FAILED: error -> ${e.message}`);
-    process.exit(1);
-  } finally {
+    if (fs.existsSync(oldFile)) fs.unlinkSync(oldFile);
+    if (fs.existsSync(newFile)) fs.unlinkSync(newFile);
     stopServer(serverProcess);
+    process.exit(1);
   }
 }
 
