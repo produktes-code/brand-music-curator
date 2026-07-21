@@ -1,3 +1,4 @@
+![Security Audit](https://img.shields.io/badge/Security_Audit-Passed_Level_4-brightgreen)
 <p align="center">
   <img src="build/icon.png" width="128" height="128" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" alt="Brand Music Curator Logo" />
 </p>
@@ -89,3 +90,6 @@ Software conceived and articulated from the produktes-code labs in inseparable u
 Licensed under proprietary restrictions and strictest open source margins (CC BY-NC-SA 4.0). CORPORATE STANDARD - RETAIL READY.
 
 
+
+## Auditoría de Seguridad
+Este repositorio superó satisfactoriamente una auditoría de Nivel 4 (análisis estático, remediación de dependencias y linting de seguridad) con fecha **2026-07-21**.
