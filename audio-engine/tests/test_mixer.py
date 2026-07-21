@@ -2,10 +2,10 @@
 Tests reales para el módulo mixer.py del audio-engine de Brand Music Curator.
 Verifica: mezcla armónica (Camelot Wheel), curvas de transición, diferencias de energía.
 """
+
 import sys
 import os
 import json
-import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import mixer
@@ -22,10 +22,12 @@ class TestGenerateMixCurve:
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
         assert result["status"] == "success"
-        assert result["harmonic_match"] is True, \
+        assert result["harmonic_match"] is True, (
             f"Misma tonalidad debería ser armónica. Resultado: {result}"
-        assert "Long Crossfade" in result["transition"], \
+        )
+        assert "Long Crossfade" in result["transition"], (
             f"BPMs cercanos y misma tonalidad deberían dar Long Crossfade. Transición: {result['transition']}"
+        )
 
     def test_different_keys_not_harmonic(self, capsys):
         """Dos pistas con distinta tonalidad deben ser harmonic_match=False."""
@@ -34,8 +36,9 @@ class TestGenerateMixCurve:
         mixer.generate_mix_curve(track1, track2)
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
-        assert result["harmonic_match"] is False, \
+        assert result["harmonic_match"] is False, (
             f"Distinta tonalidad no debería ser armónica. Resultado: {result}"
+        )
 
     def test_energy_boost_triggers_drop_cut(self, capsys):
         """Un salto de energía >30 debe generar Drop/Quick Cut."""
@@ -44,10 +47,12 @@ class TestGenerateMixCurve:
         mixer.generate_mix_curve(track1, track2)
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
-        assert "Drop / Quick Cut" in result["transition"], \
+        assert "Drop / Quick Cut" in result["transition"], (
             f"Salto de energía >30 debería dar Drop/Quick Cut. Transición: {result['transition']}"
-        assert result["energy_delta"] == 60.0, \
+        )
+        assert result["energy_delta"] == 60.0, (
             f"Delta de energía debería ser 60.0. Resultado: {result['energy_delta']}"
+        )
 
     def test_standard_fade_for_moderate_diff(self, capsys):
         """Diferencia moderada sin match armónico debe dar Standard Fade."""
@@ -56,8 +61,9 @@ class TestGenerateMixCurve:
         mixer.generate_mix_curve(track1, track2)
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
-        assert "Standard Fade" in result["transition"], \
+        assert "Standard Fade" in result["transition"], (
             f"Diferencia moderada debería dar Standard Fade. Transición: {result['transition']}"
+        )
 
     def test_energy_delta_calculation(self, capsys):
         """El campo energy_delta debe ser t2.energy - t1.energy."""
@@ -66,8 +72,9 @@ class TestGenerateMixCurve:
         mixer.generate_mix_curve(track1, track2)
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
-        assert result["energy_delta"] == 40.0, \
+        assert result["energy_delta"] == 40.0, (
             f"Delta de energía incorrecto. Esperado: 40.0, Obtenido: {result['energy_delta']}"
+        )
 
     def test_missing_keys_defaults(self, capsys):
         """Pistas sin campos 'key' o 'energy' deben usar defaults sin crash."""
@@ -76,8 +83,9 @@ class TestGenerateMixCurve:
         mixer.generate_mix_curve(track1, track2)
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
-        assert result["status"] == "success", \
+        assert result["status"] == "success", (
             f"Debe manejar campos faltantes sin error. Resultado: {result}"
+        )
 
     def test_invalid_json_returns_error(self, capsys):
         """JSON inválido debe devolver status=error."""
@@ -87,5 +95,6 @@ class TestGenerateMixCurve:
             pass
         captured = capsys.readouterr()
         result = json.loads(captured.out.strip())
-        assert result["status"] == "error", \
+        assert result["status"] == "error", (
             f"JSON inválido debería dar error. Resultado: {result}"
+        )
