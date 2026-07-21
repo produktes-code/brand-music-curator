@@ -3,7 +3,7 @@
   <img src="build/icon.png" width="128" height="128" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" alt="Brand Music Curator Logo" />
 </p>
 
-<h1 align="center">Brand Music Curator V1.0.0</h1>
+<h1 align="center">Brand Music Curator V1.0.11</h1>
 
 <p align="center">
   <b>B2B Audio Sensory Neuro-Architecture Platform & Background Music Player</b><br/>
@@ -12,7 +12,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build" />
-  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/Version-1.0.11-blue?style=for-the-badge" alt="Version" />
   <img src="https://img.shields.io/badge/Status-Enterprise_Ready-success?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-red?style=for-the-badge" alt="License" />
 </p>
